@@ -18,11 +18,14 @@ class Solution {
         }
     }
 
-    int[] result = new int[stack.size()];
-    for (int i = result.length - 1; i >= 0; i--) {
-        result[i] = stack.pop();
-    }
-    return result;
+   List<Integer> list = new ArrayList<>();
+        while (!stack.isEmpty()) {
+            list.add(stack.pop());
+        }
+        Collections.reverse(list);
+
+        return list.stream().mapToInt(Integer::intValue).toArray();
+
         
     }
 }
