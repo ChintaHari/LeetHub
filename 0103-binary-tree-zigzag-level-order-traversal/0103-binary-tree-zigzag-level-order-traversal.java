@@ -18,8 +18,8 @@ class Solution {
         if(root == null)
             return new ArrayList<>();
         List<List<Integer>> list = new ArrayList<>();
-        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
-        queue.offer(root);
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
         boolean leftToRight = true;;
         
         
@@ -27,7 +27,7 @@ class Solution {
             int nodesAtCurrentLevel = queue.size();
             List<Integer> tempList = new LinkedList<>();
             for(int i=0; i<nodesAtCurrentLevel; i++){
-                TreeNode node = queue.poll();
+                TreeNode node = queue.remove();
                 if(leftToRight ){
                      tempList.addLast(node.val);
                 }
@@ -35,9 +35,9 @@ class Solution {
                      tempList.addFirst(node.val);
                 }
                 if(node.left != null)
-                    queue.offer(node.left);
+                    queue.add(node.left);
                 if(node.right != null)
-                    queue.offer(node.right);
+                    queue.add(node.right);
             }
             leftToRight = ! leftToRight;
             list.add(tempList);
