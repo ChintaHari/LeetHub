@@ -20,8 +20,10 @@ class Solution {
             return 0;
         if(root.val >= low && root.val <= high)
             ans = ans + root.val;
-        rangeSumBST(root.left, low, high);
-        rangeSumBST(root.right, low, high);
+        if(low < root.val)
+            rangeSumBST(root.left, low, high);
+        if(high >= root.val)
+            rangeSumBST(root.right, low, high);
         
         return ans;
     }
