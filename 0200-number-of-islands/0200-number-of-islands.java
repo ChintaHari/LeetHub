@@ -19,37 +19,37 @@ class Solution {
     }
 
     public void dfs(int i, int j, char[][] grid){
-//         visited[i][j] = true;
-//         for(int[] dir: dirs){
-//             int nextRow = i + dir[0];
-//             int nextCol = j + dir[1];
-
-            // if(nextRow >=0 && nextRow < m && nextCol >=0 && nextCol < n
-            //  && grid[nextRow][nextCol] == '1' && !visited[nextRow][nextCol]){
-            //      visited[nextRow][nextCol] = true;
-//                  dfs(nextRow, nextCol, grid); 
-//              }
-//         }
-        
-        Stack<Integer> rowStack = new Stack<>();
-        Stack<Integer> colStack = new Stack<>();
-        rowStack.push(i);   colStack.push(j);
         visited[i][j] = true;
-        while(!rowStack.isEmpty()){
-            int currRow = rowStack.pop();
-            int currCol = colStack.pop();
-            
-            for(int[] dir: dirs){
-                int nextRow = currRow + dir[0];
-                int nextCol = currCol + dir[1];
-                if(nextRow >=0 && nextRow < m && nextCol >=0 && nextCol < n
-                 && grid[nextRow][nextCol] == '1' && !visited[nextRow][nextCol]){
-                    visited[nextRow][nextCol] = true;
-                    rowStack.push(nextRow);
-                    colStack.push(nextCol);
-                }
-            }
+        for(int[] dir: dirs){
+            int nextRow = i + dir[0];
+            int nextCol = j + dir[1];
+
+            if(nextRow >=0 && nextRow < m && nextCol >=0 && nextCol < n
+             && grid[nextRow][nextCol] == '1' && !visited[nextRow][nextCol]){
+                 visited[nextRow][nextCol] = true;
+                 dfs(nextRow, nextCol, grid); 
+             }
         }
+        
+//         Stack<Integer> rowStack = new Stack<>();
+//         Stack<Integer> colStack = new Stack<>();
+//         rowStack.push(i);   colStack.push(j);
+//         visited[i][j] = true;
+//         while(!rowStack.isEmpty()){
+//             int currRow = rowStack.pop();
+//             int currCol = colStack.pop();
+            
+//             for(int[] dir: dirs){
+//                 int nextRow = currRow + dir[0];
+//                 int nextCol = currCol + dir[1];
+//                 if(nextRow >=0 && nextRow < m && nextCol >=0 && nextCol < n
+//                  && grid[nextRow][nextCol] == '1' && !visited[nextRow][nextCol]){
+//                     visited[nextRow][nextCol] = true;
+//                     rowStack.push(nextRow);
+//                     colStack.push(nextCol);
+//                 }
+//             }
+//         }
         
     }
 }
