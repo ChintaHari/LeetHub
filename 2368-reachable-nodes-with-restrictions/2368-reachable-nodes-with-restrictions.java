@@ -22,11 +22,11 @@ class Solution {
     public void dfs(int node){
         visited.add(node);
         for(int neighbour : graph.get(node)){
-            if(! visited.contains(neighbour)){
-                if(! restrictedNodes.contains(neighbour)){
+            if(! visited.contains(neighbour) && ! restrictedNodes.contains(neighbour)){
+                
                     reachableNodes ++;
                     dfs(neighbour);
-                }
+                
             }
         }
     }
