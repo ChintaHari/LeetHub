@@ -47,7 +47,7 @@ class Solution {
         
         digits[i] = node.charAt(i);
         
-        digits[i] = (char) ((digits[i] - '0' + 9) % 10 + '0'); // Use +9 instead of -1 for correct wrap-around
+        digits[i] = (char) ((digits[i] - '0' + 9) % 10 + '0');
         list.add(new String(digits));
     }
     return list;
