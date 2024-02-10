@@ -37,17 +37,21 @@ class Solution {
         return -1;
     }
     
-   public List<String> calculateNeighbors(String node) {
-        List<String> ans = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            int num = (node.charAt(i) - '0');
-            for (int change: new int[]{-1, 1}) {
-                int x = (num + change + 10) % 10;
-                ans.add(node.substring(0, i) +  x + node.substring(i + 1));
-            }
-        }
+  public List<String> calculateNeighbors(String node) {
+    List<String> list = new ArrayList<>();
+    for (int i = 0; i < 4; i++) {
+        char[] digits = node.toCharArray();
+        digits[i] = (char) ((digits[i] - '0' + 1) % 10 + '0');
+        list.add(new String(digits));
         
-        return ans;
+        digits[i] = node.charAt(i);
+        
+        digits[i] = (char) ((digits[i] - '0' + 9) % 10 + '0'); 
+        list.add(new String(digits));
     }
+    
+    return list;
+}
+
 
 }
