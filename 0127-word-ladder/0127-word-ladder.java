@@ -9,9 +9,9 @@ class State{
 class Solution {
     Queue<State> queue = new LinkedList<>();
     Set<String> visited = new HashSet<>();
-
+    Set<String> wordSet;
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        Set<String> wordSet = new HashSet<>(wordList);
+        wordSet = new HashSet<>(wordList);
         
         if (!wordSet.contains(endWord))
             return 0;
@@ -27,7 +27,7 @@ class Solution {
             if (node.equals(endWord))
                 return words;
 
-            for (String neighbour : calculateNeighbours(node, wordSet)) {
+            for (String neighbour : calculateNeighbours(node)) {
                 if (!visited.contains(neighbour)) {
                     visited.add(neighbour);
                     queue.offer(new State(neighbour, words + 1));
@@ -37,7 +37,7 @@ class Solution {
         return 0;
     }
 
-    public List<String> calculateNeighbours(String node, Set<String> wordSet) {
+    public List<String> calculateNeighbours(String node) {
         List<String> list = new ArrayList<>();
         char[] chars = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
