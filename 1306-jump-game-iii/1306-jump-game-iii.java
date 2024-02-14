@@ -3,17 +3,19 @@ class Solution {
     Set<Integer> visited = new HashSet<>();
     List<Integer> arrList = new ArrayList<>();
     public boolean canReach(int[] arr, int start) {
-        arrList = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        // arrList = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        int n = arr.length;
         queue.offer(start);
         visited.add(start);
         
         while(! queue.isEmpty()){
             int currIndex = queue.poll();
-            if(arrList.get(currIndex) == 0)
+            if(arr[currIndex] == 0)
                 return true;
             
-            for(int neighbour : new int[]{currIndex + arrList.get(currIndex), currIndex - arrList.get(currIndex)}){
-                if(neighbour >=0 && neighbour < arr.length){
+            int val = arr[currIndex];
+            for(int neighbour : new int[]{currIndex + val, currIndex - val}){
+                if(neighbour >=0 && neighbour < n){
                     if(! visited.contains(neighbour)){
                         visited.add(neighbour);
                         queue.offer(neighbour);
