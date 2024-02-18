@@ -2,6 +2,8 @@ class Solution {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         PriorityQueue<Integer> heap = new PriorityQueue<>(
             (a,b) -> {
+                // int diff = Math.abs(b-x) - Math.abs(a-x);
+                // return diff !=0 ? diff : b-a;
                 int diff = Math.abs(b-x) - Math.abs(a-x);
                 return diff !=0 ? diff : b-a;
             }
