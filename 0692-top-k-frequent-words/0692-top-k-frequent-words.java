@@ -17,7 +17,7 @@ class Solution {
         
        List<String> result = new ArrayList<>();
         while (!heap.isEmpty()) {
-            result.add(heap.poll());
+            result.add(heap.remove());
         }
         Collections.reverse(result); 
 
