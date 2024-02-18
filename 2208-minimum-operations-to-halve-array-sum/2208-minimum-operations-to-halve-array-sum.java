@@ -4,12 +4,12 @@ class Solution {
         for(int ele: nums)
             heap.add((double) ele);
         double sum = heap.stream().mapToDouble(Double::doubleValue).sum();
-        double currSum = sum;
+        double currSum = sum, target = sum/2;
         int ans=0;
-        while(currSum > sum/2){
-            double maxElement = heap.remove();
-            heap.add(maxElement/2);
-            currSum = currSum - maxElement/2;
+        while(currSum > target){
+            double maxElementHalf = heap.remove()/2;
+            heap.add(maxElementHalf);
+            currSum = currSum - maxElementHalf;
             ans++;
         }
         return ans;
