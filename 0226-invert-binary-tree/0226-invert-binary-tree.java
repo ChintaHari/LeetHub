@@ -13,30 +13,38 @@
  *     }
  * }
  */
+// class Test{
+//     TreeNode node1, node2;
+//     Test(TreeNode node1, TreeNode node2){
+//         this.node1 = node1;
+//         this.node2 = node2;
+//     }
+// }
 class Solution {
+    Queue<TreeNode> queue = new LinkedList<>();
+    
     public TreeNode invertTree(TreeNode root) {
-        if(root == null || (root.left==null && root.right == null))
+        
+        if(root==null || (root.left == null && root.right == null))
             return root;
-        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while(! queue.isEmpty()){
             int nodesAtCurrentLevel = queue.size();
-            for(int i=0; i<nodesAtCurrentLevel; i++){
-                TreeNode node = queue.poll();
-                invert(node);
-                if(node.left != null)
-                    queue.offer(node.left);
-                if(node.right != null)
-                    queue.offer(node.right);
+            TreeNode node = queue.poll();
+            if(node.left == null && node.right == null)
+                continue;
+            if(node.right !=null || node.left != null){
+                TreeNode temp = node.left;
+                node.left = node.right;
+                node.right = temp;
             }
+            if(node.left != null)
+                queue.offer(node.left);
+            if(node.right != null)
+                queue.offer(node.right);
         }
         return root;
-    }
-    public void invert(TreeNode node){
-        if(node == null)
-            return;
-        TreeNode temp = node.left;
-        node.left = node.right;
-        node.right = temp;
+        
+        
     }
 }
