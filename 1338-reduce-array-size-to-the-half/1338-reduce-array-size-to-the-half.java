@@ -14,7 +14,6 @@ class Solution {
         while(currNoOfElements > n/2){
             int pop = maxHeap.remove();
             currNoOfElements = currNoOfElements - map.get(pop);
-            map.remove(pop);
             minSet++;
         }
         return minSet;
