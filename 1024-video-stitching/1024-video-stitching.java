@@ -1,19 +1,18 @@
 class Solution {
     public int videoStitching(int[][] clips, int time) {
-        int start =0, end=0, total=0;
-        while(end < time){
-            for(int i=0; i<clips.length; i++){
-                int left = clips[i][0];
-                int right = clips[i][1];
-                if(left <= start && right > end)
-                    end = right;
+        Arrays.sort(clips, (a, b) -> a[0] - b[0]);
+        int count = 0, i = 0, start = 0, end = 0;
+        while (start < time) {
+            while (i < clips.length && clips[i][0] <= start) {
+                end = Math.max(end, clips[i][1]);
+                i++;
             }
-            if (start == end)
+            if (start == end) {
                 return -1;
-            
+            }
             start = end;
-            total++;
+            count++;
         }
-        return total;
+        return count;
     }
 }
