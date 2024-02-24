@@ -8,11 +8,15 @@ class Solution {
         int[] result = new int[queries.length];
         for(int i=0; i<queries.length; i++){
             int targetSum = queries[i];
-            int left =0, right = nums.length;
-            while(left < right){
+            int left =0, right = nums.length-1;
+            while(left <= right){
                 int mid = left + (right - left)/2;
+                if(prefix[mid] == targetSum){
+                    left = mid + 1;
+                    break;
+                }
                 if(prefix[mid] > targetSum){
-                    right = mid;
+                    right = mid - 1;
                 }
                 else
                     left = mid + 1;
