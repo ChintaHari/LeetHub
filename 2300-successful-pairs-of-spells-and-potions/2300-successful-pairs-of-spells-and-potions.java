@@ -7,9 +7,9 @@ class Solution {
             int left =0, right = potions.length-1;
             while(left <= right){
                 int mid = left + (right - left)/2;
-                if(requiredPortionStrength > potions[mid])
+                if(potions[mid] < requiredPortionStrength)
                     left = mid + 1;
-                if(requiredPortionStrength <= potions[mid])
+                else
                     right = mid - 1;
             }
             result[i] =  potions.length - left;
