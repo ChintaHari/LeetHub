@@ -20,11 +20,8 @@ class Solution {
     
     public boolean canReachWithSpeedMid(int speed, int[] dist){
         double hours = 0;
-        for(double ele: dist){
-            hours = Math.ceil(hours);
-            hours = (hours) + ele/speed;
-        }
-            
+        for(double ele: dist)
+            hours = Math.ceil(hours) + ele/speed;    
         return hours <= limit;
     }
 }
