@@ -4,7 +4,7 @@ class Solution {
     public int splitArray(int[] nums, int k) {
         long left = Arrays.stream(nums).max().getAsInt();
         long right = Arrays.stream(nums).sum();
-        while(left < right){
+        while(left <= right){
             long mid = left + (right - left)/2;
             
             int subArrays = 1; 
@@ -18,7 +18,7 @@ class Solution {
             }
             
             if(subArrays <= k) 
-                right = mid;
+                right = mid - 1;
             else 
                 left = mid + 1;
         }
