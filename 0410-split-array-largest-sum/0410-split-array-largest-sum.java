@@ -17,10 +17,10 @@ class Solution {
                 }
             }
             
-            if(subArrays <= k) 
-                right = mid - 1;
-            else 
+            if(subArrays > k) 
                 left = mid + 1;
+            else 
+                right = mid - 1;
         }
         return (int)left;
     }
