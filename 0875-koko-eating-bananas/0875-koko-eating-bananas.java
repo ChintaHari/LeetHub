@@ -12,7 +12,7 @@ class Solution {
             else
                 minEatingSpeed = middleEatingSpeed + 1;
         }
-        return minEatingSpeed;
+        return minEatingSpeed; //Why return min? because they asked min k to eat all bananas
     }
     
     public boolean checkIfAllBananasCanBeEatenWithThisSpeed(double speed, int[] piles){
