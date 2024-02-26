@@ -21,7 +21,7 @@ class Solution {
                 else
                     left = mid + 1;
             }
-            result[i] = left;
+            result[i] = left; //because it is length
         }
         
     return result;
