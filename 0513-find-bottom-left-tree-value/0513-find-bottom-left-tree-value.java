@@ -15,14 +15,15 @@
  */
 class Solution {
     public int findBottomLeftValue(TreeNode root) {
+        //List<Integer> lastLevelValues = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int currentLeft = root.val;
         while (!queue.isEmpty()) {
             int nodesAtCurrentLevel = queue.size();
-            for (int i = 0; i < nodesAtCurrentLevel; ++i) {
+            for (int i=0; i<nodesAtCurrentLevel; i++) {
                 TreeNode node = queue.poll();
-                if (i == 0) 
+                if (i==0) 
                     currentLeft = node.val;   
                 if (node.left != null) 
                     queue.offer(node.left);
