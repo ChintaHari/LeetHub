@@ -11,7 +11,7 @@ class Solution {
     Set<String> visited = new HashSet<>();
     public int openLock(String[] deadends, String target) {
         for(String deadend : deadends){
-            if(deadend.equals("0000"))
+            if("0000".equals(deadend))
                 return -1;
             visited.add(deadend);
         }
