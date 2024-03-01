@@ -26,9 +26,8 @@ class Solution {
             result.add(curr.toString());
             return;
         }
-
-        String possibleLetters = hm.get(digits.charAt(index));
-        for (char letter : possibleLetters.toCharArray()) {
+        
+        for (char letter : hm.get(digits.charAt(index)).toCharArray()) {
             curr.append(letter);
             backtrack(index + 1, digits);
             curr.deleteCharAt(curr.length() - 1); 
