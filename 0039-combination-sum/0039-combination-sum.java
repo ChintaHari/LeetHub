@@ -14,9 +14,10 @@ class Solution {
         }
         
         for(int j=index; j<candidates.length; j++){
-            if(currSum + candidates[j] <= target){
+            int currUpdatedSum = currSum + candidates[j];
+            if(currUpdatedSum <= target){
                 curr.add(candidates[j]);
-                backtrack(candidates, target, currSum + candidates[j], j);
+                backtrack(candidates, target, currUpdatedSum, j);
                 curr.remove(curr.size() - 1);
             }
         }
