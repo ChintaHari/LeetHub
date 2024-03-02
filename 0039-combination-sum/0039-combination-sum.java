@@ -1,9 +1,10 @@
 class Solution {
     List<List<Integer>> result = new ArrayList<>();
     List<Integer> curr = new ArrayList<>();
-    int currSum = 0, startIndex=0;
+    int currSum = 0;
+    int index = 0;
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        backtrack(candidates, target, currSum, startIndex);
+        backtrack(candidates, target, currSum, index);
         return result; 
     }
     
