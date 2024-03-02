@@ -17,8 +17,7 @@ class Solution {
             else{
                 result[resultIndex--] = rightSquare;
                 right--;
-            }
-                
+            }    
         }
         return result;
         
