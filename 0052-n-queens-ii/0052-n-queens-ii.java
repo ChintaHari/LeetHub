@@ -6,10 +6,10 @@ class Solution {
     int row = 0;
     public int totalNQueens(int n) {
         size = n;
-        return backtrack(row, size);
+        return backtrack(row);
     }
     
-    public int backtrack(int row, int size){
+    public int backtrack(int row){
         if(row == size)
             return 1;
         
@@ -17,14 +17,14 @@ class Solution {
         for(int col = 0; col < size; col ++){
             int currentDiagonalValue = row - col;
             int currentAntiDiagonalValue = row + col;
-            if(cols.contains(col) || diagonals.contains(currentDiagonalValue) ||  antiDiagonals.contains(currentAntiDiagonalValue))
+            if(cols.contains(col) || diagonals.contains(currentDiagonalValue) || antiDiagonals.contains(currentAntiDiagonalValue))
                 continue;
             
             cols.add(col);
             diagonals.add(currentDiagonalValue);
             antiDiagonals.add(currentAntiDiagonalValue);
             
-            solutions = solutions + backtrack(row + 1, size);
+            solutions = solutions + backtrack(row + 1);
             
             cols.remove(col);
             diagonals.remove(currentDiagonalValue);
