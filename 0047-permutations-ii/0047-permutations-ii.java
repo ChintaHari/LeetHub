@@ -5,27 +5,24 @@ class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         Arrays.sort(nums);
         visited = new boolean[nums.length];
-        backtrack(nums, 0);
+        backtrack(nums);
         return result;
     }
     
-    public void backtrack(int[] nums, int index){
-        if(index == nums.length){
+    public void backtrack(int[] nums){
+        if(curr.size() == nums.length){
             result.add(new ArrayList<>(curr));
             return;
         }
         
         for(int i=0; i<nums.length; i++){
-            if(i>0 && nums[i] == nums[i-1] && !visited[i-1])
+            if(visited[i] || (i>0 && nums[i] == nums[i-1] && !visited[i-1]))
                 continue;
-            if(!visited[i]){
-                curr.add(nums[i]);
-                visited[i] = true;
-                backtrack(nums, index+1);
-                visited[i] = false;
-                curr.remove(curr.size() - 1);
-            }
-           
+            curr.add(nums[i]);
+            visited[i] = true;
+            backtrack(nums);
+            visited[i] = false;
+            curr.remove(curr.size() - 1);
         }
     }
 }
