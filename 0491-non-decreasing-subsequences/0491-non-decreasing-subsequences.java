@@ -14,7 +14,7 @@ class Solution {
         }
         Set<Integer> set = new HashSet<>();
         for(int i=index; i<nums.length; i++){
-            if((!curr.isEmpty() && nums[i] < curr.get(curr.size()-1)) || set.contains(nums[i]))
+            if((!curr.isEmpty() && nums[i] < curr.get(curr.size()-1)) || set.contains(nums[i]) )
                 continue;
             curr.add(nums[i]);
             set.add(nums[i]);
