@@ -11,6 +11,8 @@ class Solution {
                 if(ch2 == ch1){
                     sb.append(new String(new char[hm.get(ch2)]).replace('\0', ch2));
                     hm.remove(ch2);
+                    s.replaceAll(String.valueOf(ch2), "");
+                    
                     break;
                 }
             }
