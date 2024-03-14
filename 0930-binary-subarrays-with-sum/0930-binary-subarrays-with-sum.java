@@ -20,20 +20,39 @@
 // }
 
 
+// class Solution {
+//     public int numSubarraysWithSum(int[] nums, int goal) {
+//         Map<Integer, Integer> hm = new HashMap<>();
+//         int currSum = 0;
+//         int count =0;
+        
+//         for(int num : nums){
+//             currSum = currSum + num;
+//             if(currSum == goal)
+//                 count++;
+//             if(hm.containsKey(currSum - goal))
+//                 count = count + hm.get(currSum - goal);
+//             hm.put(currSum, hm.getOrDefault(currSum, 0)+1);
+//         }
+//         return count;
+//     }
+// }
+
+
 class Solution {
     public int numSubarraysWithSum(int[] nums, int goal) {
-        Map<Integer, Integer> hm = new HashMap<>();
-        int currSum = 0;
-        int count =0;
-        
-        for(int num : nums){
-            currSum = currSum + num;
-            if(currSum == goal)
-                count++;
-            if(hm.containsKey(currSum - goal))
-                count = count + hm.get(currSum - goal);
-            hm.put(currSum, hm.getOrDefault(currSum, 0)+1);
+       return slidingWindow(nums, goal) - slidingWindow(nums, goal-1);
+    }
+    
+    public int slidingWindow(int[] nums, int goal){
+        int currSum =0, count =0, left =0;
+        for(int right = 0; right < nums.length; right++){
+            currSum = currSum + nums[right];
+            while(left <= right && currSum > goal)
+                currSum = currSum - nums[left++];
+            count = count + (right - left + 1);
         }
+        
         return count;
     }
 }
