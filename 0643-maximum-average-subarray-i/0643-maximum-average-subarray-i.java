@@ -6,7 +6,6 @@ class Solution {
             currSum = currSum + nums[right];
             if(right - left + 1 == k){
                 maxAverge = Math.max(maxAverge, (double)(currSum/k));
-                System.out.println(maxAverge);
                 currSum = currSum - nums[left];
                 left++;
             }
