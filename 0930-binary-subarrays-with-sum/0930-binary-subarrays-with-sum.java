@@ -46,7 +46,7 @@ class Solution {
     
     public int slidingWindow(int[] nums, int goal){
         int currSum =0, count =0, left =0;
-        for(int right = 0; right < nums.length; right++){
+        for(int right = left; right < nums.length; right++){
             currSum = currSum + nums[right];
             while(left <= right && currSum > goal)
                 currSum = currSum - nums[left++];
