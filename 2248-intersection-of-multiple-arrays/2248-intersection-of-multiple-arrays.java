@@ -1,16 +1,21 @@
 class Solution {
     public List<Integer> intersection(int[][] nums) {
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        List<Integer> list = Arrays.stream(nums).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList());
-        for(int ele : list)
-            hm.put(ele, hm.getOrDefault(ele,0) + 1);
+        Map<Integer, Integer> counts = new HashMap<>();
+        for (int[] arr: nums) {
+            for (int x: arr) {
+                counts.put(x, counts.getOrDefault(x, 0) + 1);
+            }
+        }
         
-        List<Integer> result = new ArrayList<>();
-        for(int key : hm.keySet())
-            if(hm.get(key) == nums.length)
-                result.add(key);
+        int n = nums.length;
+        List<Integer> ans = new ArrayList<>();
+        for (int key: counts.keySet()) {
+            if (counts.get(key) == n) {
+                ans.add(key);
+            }
+        }
         
-        Collections.sort(result);
-        return result;
+        Collections.sort(ans);
+        return ans;
     }
 }
