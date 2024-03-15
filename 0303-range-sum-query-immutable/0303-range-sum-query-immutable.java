@@ -1,17 +1,15 @@
 class NumArray {
-    int[] prefixSum;
-    List<Integer> numsList = new ArrayList<>();
+    int[] prefixSum, nums;
     public NumArray(int[] nums) {
-        numsList = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        int n = nums.length;
-        prefixSum = new int[n];
+        this.nums = nums;
+        prefixSum = new int[nums.length];
         prefixSum[0] = nums[0];
-        for(int i=1; i<n; i++)
-            prefixSum[i] = nums[i] + prefixSum[i-1];
+        for(int i=1 ; i<nums.length; i++)
+            prefixSum[i] = prefixSum[i-1] + nums[i];
     }
     
     public int sumRange(int left, int right) {
-        return prefixSum[right] - prefixSum[left] + numsList.get(left);
+        return prefixSum[right] - prefixSum[left] + nums[left];
     }
 }
 
