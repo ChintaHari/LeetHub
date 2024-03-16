@@ -5,7 +5,9 @@ class Solution {
             hm.put(num, hm.getOrDefault(num, 0) + 1);
         //Collections.sort(hm.values(), Collections.reverseOrder());
         
-        int max = hm.values().stream().mapToInt(Integer::intValue).max().getAsInt();
+         int max = Integer.MIN_VALUE;
+        for(int ele : hm.values())
+            max = Math.max(max, ele);
         int ans = 0;
         for(int key : hm.keySet())
             if(hm.get(key) == max)
