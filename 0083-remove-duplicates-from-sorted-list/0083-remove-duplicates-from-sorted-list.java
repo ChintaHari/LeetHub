@@ -13,17 +13,13 @@ class Solution {
         ListNode zeroNode = new ListNode(-101, head);
         ListNode curr = head, prev = zeroNode;
         while(curr!=null){
-            if(curr.val == prev.val){
+            if(curr.val == prev.val)
                 prev.next = curr.next;
-                //curr.next = null;
-                curr = curr.next;
-            }
-            else{
+            else
                 prev = curr;
-                curr = curr.next;
-            }
-           
+            curr = curr.next;
         }
+           
         return head;
     }
 }
