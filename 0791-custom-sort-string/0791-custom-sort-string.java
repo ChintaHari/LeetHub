@@ -6,7 +6,7 @@ class Solution {
         
         StringBuilder sb = new StringBuilder();
         for(char ch :  order.toCharArray()){
-            for(char ch2 : hm.keySet()){
+            for(char ch2 : s.toCharArray()){
                 if(ch2 == ch){
                     sb.append(new String(new char[hm.get(ch2)]).replace('\0', ch2));
                     hm.remove(ch2);
