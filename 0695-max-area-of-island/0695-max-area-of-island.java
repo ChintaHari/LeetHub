@@ -1,42 +1,42 @@
 class Solution {
-    Set<String> visited = new HashSet<>();
-    int max = Integer.MIN_VALUE;
+    boolean[][] visited;
+    int rows=0, cols=0;
+    int maxArea = Integer.MIN_VALUE;
     int currArea = 0;
-    int[][] dirs = new int[][]{{1,0}, {-1,0}, {0,1}, {0,-1}};
-    int rows = 0, cols = 0;
+    int[][] grid;
+    int[][] dirs = new int[][]{{1,0}, {0,1}, {-1,0}, {0,-1}};
     public int maxAreaOfIsland(int[][] grid) {
         rows = grid.length;
         cols = grid[0].length;
+        this.grid = grid;
+        
+        visited = new boolean[rows][cols];
         
         for(int i=0; i<rows; i++){
             for(int j=0; j<cols; j++){
-                if(! visited.contains(convertToString(i,j))){
+                if(! visited[i][j]){
                     currArea = 0;
                     if(grid[i][j] == 1){
-                        currArea ++;
-                        dfs(i, j, grid);
+                        currArea++;
+                        dfs(i,j);
                     }
                 }
             }
         }
-        return max == Integer.MIN_VALUE ? 0 : max;
-        
+        return maxArea == Integer.MIN_VALUE ? 0 : maxArea;
     }
     
-    public void dfs(int startRow, int startCol, int[][] grid){
-        visited.add(convertToString(startRow, startCol));
-        for(int[] dir: dirs){
-            int nextRow = startRow + dir[0], nextCol = startCol + dir[1];
-            if(nextRow >=0 && nextRow < rows && nextCol >=0 && nextCol < cols
-              && grid[nextRow][nextCol]==1 && !visited.contains(convertToString(nextRow, nextCol))){
-                currArea++;
-                dfs(nextRow, nextCol, grid);
+    public void dfs(int row, int col){
+        visited[row][col] = true;
+        for(int[] dir : dirs){
+            int nextRow = row + dir[0], nextCol = col + dir[1];
+            if(nextRow >= 0 && nextRow < rows && nextCol >=0 
+               && nextCol < cols && grid[nextRow][nextCol] == 1
+               && !visited[nextRow][nextCol]){
+                currArea ++;
+                dfs(nextRow, nextCol);
             }
         }
-        max = Math.max(max, currArea);
-    }
-    
-    public String convertToString(int x, int y){
-        return String.valueOf(x) + "," + String.valueOf(y);
+        maxArea = Math.max(maxArea, currArea);
     }
 }
