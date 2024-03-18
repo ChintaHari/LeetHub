@@ -20,20 +20,3 @@ immediate_first_orders as(
 
 select round((count(*) * 100) / (select count(*) from first_orders), 2) as immediate_percentage from immediate_first_orders
 
-# WITH FirstOrders AS (
-#     SELECT customer_id, MIN(order_date) AS FirstOrderDate
-#     FROM Delivery
-#     GROUP BY customer_id
-# )
-
-# , ImmediateFirstOrders AS (
-#     SELECT FO.customer_id
-#     FROM FirstOrders FO
-#     JOIN Delivery D ON FO.customer_id = D.customer_id AND FO.FirstOrderDate = D.order_date
-#     WHERE D.order_date = D.customer_pref_delivery_date
-# )
-
-# SELECT ROUND(
-#         (COUNT(*) * 100.0) / (SELECT COUNT(*) FROM FirstOrders)
-#        , 2) AS immediate_percentage
-# FROM ImmediateFirstOrders;
