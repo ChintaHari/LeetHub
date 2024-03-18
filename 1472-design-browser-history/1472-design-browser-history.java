@@ -1,36 +1,33 @@
-class DoubleLinkedList{
-    String url;
-    DoubleLinkedList prev, next;
-    
-    public DoubleLinkedList(String url){
-        this.url = url;
-        this.prev = null;
-        this.next = null;
-    }
-}
 class BrowserHistory {
-    DoubleLinkedList current;
+    Stack<String> back, forward;
+    String currentpage;
     public BrowserHistory(String homepage) {
-        current = new DoubleLinkedList(homepage);
+        back = new Stack<>();
+        forward = new Stack<>();
+        this.currentpage = homepage;
     }
     
     public void visit(String url) {
-        DoubleLinkedList newNode = new DoubleLinkedList(url);
-        current.next = newNode;
-        newNode.prev = current;
-        current = newNode;
+        back.push(currentpage);
+        currentpage = url;
+        forward.clear();
     }
     
     public String back(int steps) {
-        while(current.prev != null && steps-- > 0)
-            current = current.prev;
-        return current.url;
+        while(! back.isEmpty() && steps-- >0){
+            forward.push(currentpage);
+            currentpage = back.pop();
+        }
+
+        return currentpage;
     }
     
     public String forward(int steps) {
-        while(current.next != null && steps-- > 0)
-            current = current.next;
-        return current.url;
+        while(! forward.isEmpty() && steps-- > 0){
+            back.push(currentpage);
+            currentpage = forward.pop();
+        }
+        return currentpage;
     }
 }
 
