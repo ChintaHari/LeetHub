@@ -1,33 +1,27 @@
 class BrowserHistory {
-    Stack<String> back, forward;
-    String currentpage;
+    List<String> browserHistory;
+    int currentIndex;
+
     public BrowserHistory(String homepage) {
-        back = new Stack<>();
-        forward = new Stack<>();
-        this.currentpage = homepage;
+        browserHistory = new ArrayList<>();
+        browserHistory.add(homepage);
+        currentIndex = 0;
     }
     
     public void visit(String url) {
-        back.push(currentpage);
-        currentpage = url;
-        forward.clear();
+        browserHistory.subList(currentIndex + 1, browserHistory.size()).clear();
+        browserHistory.add(url);
+        currentIndex++;
     }
     
     public String back(int steps) {
-        while(! back.isEmpty() && steps-- >0){
-            forward.push(currentpage);
-            currentpage = back.pop();
-        }
-
-        return currentpage;
+        currentIndex= Math.max(0, currentIndex - steps);
+        return browserHistory.get(currentIndex);
     }
     
     public String forward(int steps) {
-        while(! forward.isEmpty() && steps-- > 0){
-            back.push(currentpage);
-            currentpage = forward.pop();
-        }
-        return currentpage;
+        currentIndex = Math.min(browserHistory.size() - 1, currentIndex + steps);
+        return browserHistory.get(currentIndex);
     }
 }
 
