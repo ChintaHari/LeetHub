@@ -26,11 +26,11 @@ class Solution {
 
             if(nextRow >=0 && nextRow < m && nextCol >=0 && nextCol < n
              && grid[nextRow][nextCol] == '1' && !visited[nextRow][nextCol]){
-                 visited[nextRow][nextCol] = true;
+                 //visited[nextRow][nextCol] = true;
                  dfs(nextRow, nextCol, grid); 
              }
         }
-        
+         
 //         Stack<Integer> rowStack = new Stack<>();
 //         Stack<Integer> colStack = new Stack<>();
 //         rowStack.push(i);   colStack.push(j);
