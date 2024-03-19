@@ -29,7 +29,7 @@ class Solution {
             int proftIncludingCurrent = jobs[i].profit;
             for(int j=i-1; j>=0; j--){
                 if(jobs[i].start >= jobs[j].end){
-                    proftIncludingCurrent = proftIncludingCurrent + dp[j];
+                    proftIncludingCurrent = Math.max(proftIncludingCurrent, proftIncludingCurrent + dp[j]);
                     break;
                 }
             }
