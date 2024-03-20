@@ -27,6 +27,7 @@ class Solution {
                 }
             }
             dp[i] = Math.max(dp[i-1], profitOfTheCurrentInterval);
+            //dp[i] = profitOfTheCurrentInterval;
         }
         return dp[n-1];
     }
