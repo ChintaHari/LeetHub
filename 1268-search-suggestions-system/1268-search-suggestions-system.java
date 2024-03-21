@@ -14,8 +14,12 @@ class Solution {
         List<List<String>> result = new ArrayList<>();
         TrieNode currNode = root;
         for(char ch: searchWord.toCharArray()){
-            currNode = currNode != null ? currNode.map.get(ch) : null;
-            result.add(currNode == null ? Collections.emptyList() : currNode.suggestions);
+            currNode = (currNode != null) ? currNode.map.get(ch) : null;
+            
+            if (currNode != null) 
+                result.add(currNode.suggestions);
+             else 
+                result.add(Collections.emptyList());
         }
         
         return result;
