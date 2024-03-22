@@ -23,9 +23,7 @@ class Solution {
                 differentIndices.add(i);
         }
         
-        if(differentIndices.size() == 0)
-            return false;
-        else if(differentIndices.size() == 2){
+        if(differentIndices.size() == 2){
             if(s.charAt(differentIndices.get(0)) == goal.charAt(differentIndices.get(1)) 
                && s.charAt(differentIndices.get(1)) == goal.charAt(differentIndices.get(0)) )
                 return true;
