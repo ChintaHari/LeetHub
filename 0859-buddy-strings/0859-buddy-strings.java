@@ -6,13 +6,9 @@ class Solution {
         if (s.equals(goal)) {
             Map<Character, Integer> charCountMap = new HashMap<>();
             for (int i = 0; i < s.length(); i++) {
-                char currentChar = s.charAt(i);
-                int count = charCountMap.getOrDefault(currentChar, 0) + 1;
-                charCountMap.put(currentChar, count);
-
-                if (count > 1) {
+                charCountMap.put(s.charAt(i), charCountMap.getOrDefault(s.charAt(i), 0) + 1);
+                if (charCountMap.get(s.charAt(i)) > 1) 
                     return true;
-                }
             }
             return false;
         }
