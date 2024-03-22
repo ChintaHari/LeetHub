@@ -1,3 +1,5 @@
+//watch this video: https://www.youtube.com/watch?v=zx5Sw9130L0
+
 class Solution {
     public int largestRectangleArea(int[] heights) {
         Stack<int[]> stack = new Stack<>();
