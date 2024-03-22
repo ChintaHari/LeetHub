@@ -35,11 +35,11 @@ class Solution {
     public boolean canJump(int[] nums) {
         boolean[] dp = new boolean[nums.length];
         dp[nums.length - 1] = true;
-        for(int i = nums.length - 2; i>=0 ; i--){
-            int farthestPositionThatCanBeReachedByCurrentPosition = Math.min(i + nums[i], nums.length-1);
-            for(int nP = i+1; nP <= farthestPositionThatCanBeReachedByCurrentPosition; nP++){
-                if(dp[nP]){
-                    dp[i] = true;
+        for(int position = nums.length - 2; position>=0 ; position--){
+            int farthestPositionThatCanBeReachedByCurrentPosition = Math.min(position + nums[position], nums.length-1);
+            for(int nextPosition = position+1; nextPosition <= farthestPositionThatCanBeReachedByCurrentPosition; nextPosition++){
+                if(dp[nextPosition]){
+                    dp[position] = true;
                     break;
                 }
             }
