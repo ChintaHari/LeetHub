@@ -24,10 +24,6 @@ class Solution {
             }
         }
 
-        int result = 0;
-        while (!stack.isEmpty()) {
-            result += stack.pop();
-        }
-        return result;
+       return stack.stream().mapToInt(Integer::intValue).sum();
     }
 }
