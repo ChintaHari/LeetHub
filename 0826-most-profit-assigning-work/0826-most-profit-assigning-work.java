@@ -25,6 +25,7 @@ class Solution {
                 i++;
             }
             maxProfit = maxProfit + bestProfitableWorkForWorker; 
+            i=0;
         }
         return maxProfit;
     }
