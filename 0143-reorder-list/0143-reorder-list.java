@@ -20,9 +20,7 @@ class Solution {
 
   private ListNode findMiddleOfTheList(ListNode head) {
     ListNode prev = null;
-    ListNode slow = head;
-    ListNode fast = head;
-
+    ListNode slow = head, fast = head;
     while (fast != null && fast.next != null) {
       prev = slow;
       slow = slow.next;
