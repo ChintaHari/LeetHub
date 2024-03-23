@@ -1,5 +1,3 @@
-//Watch this video: https://www.youtube.com/watch?v=Hr5cWUld4vU&ab_channel=NeetCode
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -18,19 +16,16 @@
 class Solution {
     int maxPath = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-        int dummy = maxPathSumCompute(root);
+        int dummy = computeMaxPath(root);
         return maxPath;
     }
     
-    public int maxPathSumCompute(TreeNode node){
+    public int computeMaxPath(TreeNode node){
         if(node == null)
             return 0;
-        
-        int left = Math.max(0, maxPathSumCompute(node.left));
-        int right = Math.max(0, maxPathSumCompute(node.right));
-        
-        maxPath = Math.max(maxPath, left + right + node.val);
-        return Math.max(left, right) + node.val;
-        
+        int left = Math.max(0, computeMaxPath(node.left));
+        int right = Math.max(0, computeMaxPath(node.right));
+        maxPath = Math.max(maxPath, node.val + left + right);
+        return node.val + Math.max(left, right);
     }
 }
