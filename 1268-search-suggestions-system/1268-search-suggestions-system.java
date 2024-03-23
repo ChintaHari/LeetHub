@@ -2,38 +2,36 @@ class TrieNode{
     Map<Character, TrieNode> map = new HashMap<>();
     List<String> suggestions = new ArrayList<>();
 }
-
 class Solution {
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         Arrays.sort(products);
-        
         TrieNode root = new TrieNode();
-        for(String word: products)
-            insertWord(root, word);
+        for(String product : products)
+            insertWord(product, root);
         
         List<List<String>> result = new ArrayList<>();
-        TrieNode currNode = root;
-        for(char ch: searchWord.toCharArray()){
-            currNode = (currNode != null) ? currNode.map.get(ch) : null;
-            
-            if (currNode != null) 
-                result.add(currNode.suggestions);
-             else 
+        TrieNode node = root;
+        for(char ch : searchWord.toCharArray()){
+            node = node == null? null : node.map.get(ch);
+            if(node == null)
                 result.add(Collections.emptyList());
+            else
+                result.add(node.suggestions);
         }
         
         return result;
+        
     }
     
-    public void insertWord(TrieNode root, String word){
-        TrieNode currNode = root;
-        for(char ch : word.toCharArray()){
-            if(!currNode.map.containsKey(ch))
-                currNode.map.put(ch, new TrieNode());
-            currNode = currNode.map.get(ch);
+    public void insertWord(String word, TrieNode root){
+        TrieNode node = root;
+        for(char ch: word.toCharArray()){
+            if(! node.map.containsKey(ch))
+                node.map.put(ch, new TrieNode());
+            node = node.map.get(ch);
             
-            if(currNode.suggestions.size() < 3)
-                currNode.suggestions.add(word);
+            if(node.suggestions.size() < 3)
+                node.suggestions.add(word);
         }
     }
 }
