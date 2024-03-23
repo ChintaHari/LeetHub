@@ -15,7 +15,7 @@ class BrowserHistory {
     }
     
     public String back(int steps) {
-        currentIndex= Math.max(0, currentIndex - steps);
+        currentIndex = Math.max(0, currentIndex - steps);
         return browserHistory.get(currentIndex);
     }
     
