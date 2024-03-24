@@ -33,7 +33,7 @@ class Solution {
                         int nextRow = row + dir[0];
                         int nextCol = col + dir[1];
                         
-                        if(nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && grid[nextRow][nextCol] > 1)
+                        if(nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && grid[nextRow][nextCol] >= 1)
                             neighbouringIslandIDs.add(grid[nextRow][nextCol]);
                         
                         int size = 1;
