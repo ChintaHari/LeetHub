@@ -12,7 +12,7 @@ class Solution {
             hm.put(i, new ArrayList<>());
         
         for(int[] prerequisite : prerequisites)
-            hm.get(prerequisite[1]).add(prerequisite[0]);
+            hm.get(prerequisite[0]).add(prerequisite[1]);
         
         for(int course = 0; course < numCourses; course++){
             if(!visited[course])
@@ -20,11 +20,13 @@ class Solution {
                     return new int[]{};
         }
          
-        int[] order = new int[numCourses];
-        for(int i = 0; i < numCourses; i++)
-            order[i] = stack.pop();
+//         int[] order = new int[numCourses];
+//         for(int i = 0; i < numCourses; i++)
+//             order[i] = stack.pop();
         
-        return order;
+//         return order;
+        return stack.stream().mapToInt(Integer::intValue).toArray();
+
     }
     
     public boolean hasCycle(int course){
