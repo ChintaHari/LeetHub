@@ -1,41 +1,37 @@
 class Solution {
-    List<List<Integer>> graph = new ArrayList<>();
-    Stack<Integer> stack = new Stack<>();
-    boolean recStack[], visited[];
+    boolean[] visited, recStack;
     int[] result;
+    HashMap<Integer, List<Integer>> hm = new HashMap<>();
+    Stack<Integer> stack = new Stack<>();
+    
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-       
-        recStack = new boolean[numCourses];
         visited = new boolean[numCourses];
-        result = new int[numCourses];
+        recStack = new boolean[numCourses];
         
         for(int i=0; i<numCourses; i++)
-            graph.add(new ArrayList<>());
+            hm.put(i, new ArrayList<>());
         
         for(int[] prerequisite : prerequisites)
-            graph.get(prerequisite[0]).add(prerequisite[1]);
+            hm.get(prerequisite[1]).add(prerequisite[0]);
         
-        for(int course =0; course < numCourses; course++){
-            if(! visited[course]){
+        for(int course = 0; course < numCourses; course++){
+            if(!visited[course])
                 if(hasCycle(course))
                     return new int[]{};
-            }
         }
+         
+        int[] order = new int[numCourses];
+        for(int i = 0; i < numCourses; i++)
+            order[i] = stack.pop();
         
-//         System.out.println(stack);
-        
-//         for(int i=0; i<numCourses; i++)
-//             result[i] = stack.pop();
-        
-//         //return result;
-        return stack.stream().mapToInt(Integer::intValue).toArray();
+        return order;
     }
     
     public boolean hasCycle(int course){
         visited[course] = true;
         recStack[course] = true;
         
-        for(int neighbour : graph.get(course)){
+        for(int neighbour : hm.get(course)){
             if(! visited[neighbour]){
                 if(hasCycle(neighbour))
                     return true;
@@ -43,9 +39,8 @@ class Solution {
             else if(recStack[neighbour])
                 return true;
         }
-        
         stack.push(course);
         recStack[course] = false;
-        return false;
+        return recStack[course];
     }
 }
