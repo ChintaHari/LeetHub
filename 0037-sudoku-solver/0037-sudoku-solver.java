@@ -1,23 +1,22 @@
 class Solution {
-    int rows = 0, cols = 0;
+    int rows = 0, cols =0;
     public void solveSudoku(char[][] board) {
         rows = board.length;
         cols = board[0].length;
-        solve(board); 
+        solve(board);
     }
     
     public boolean solve(char[][] board){
         for(int row=0; row < rows; row++){
-            for(int col=0; col < cols; col++){
+            for(int col=0; col<cols; col++){
                 if(board[row][col] == '.'){
-                    for(char ch = '1' ; ch <='9'; ch++){
-                        if(isValid(board, row, col, ch)){
+                    for(char ch = '1'; ch <= '9'; ch++){
+                        if(isValid(board, ch, row, col)){
                             board[row][col] = ch;
-                            
                             if(solve(board))
                                 return true;
                             else
-                                board[row][col] = '.';
+                               board[row][col] = '.'; 
                         }
                     }
                     return false;
@@ -27,7 +26,7 @@ class Solution {
         return true;
     }
     
-    public boolean isValid(char[][] board, int row, int col, char ch){
+    public boolean isValid(char[][] board, char ch, int row, int col){
         for(int i=0; i<9; i++){
             if(board[i][col] == ch) return false;
             if(board[row][i] == ch) return false;
