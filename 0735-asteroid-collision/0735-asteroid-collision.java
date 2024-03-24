@@ -6,8 +6,8 @@ class Solution {
                 int diff = asteroid + stack.peek();
                 if(diff < 0)
                     stack.pop();
-                else if(diff > 0)
-                    asteroid = 0;
+                else if (diff > 0)
+                    asteroid = stack.pop();
                 else{
                     asteroid = 0;
                     stack.pop();
