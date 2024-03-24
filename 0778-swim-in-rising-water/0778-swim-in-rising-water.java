@@ -8,34 +8,33 @@ class State{
 }
 class Solution {
     public int swimInWater(int[][] grid) {
-        PriorityQueue<State> queue = new PriorityQueue<>((a,b) -> (a.height - b.height));
-        int rows = grid.length;
-        int cols = grid[0].length;
-        boolean[][] visited = new boolean[rows][cols];
+        int rows = grid.length, cols = grid[0].length;
         int[][] dirs = new int[][]{{0,1}, {1,0}, {-1,0}, {0,-1}};
+        boolean[][] visited = new boolean[rows][cols];
         
-        queue.offer(new State(0, 0, grid[0][0]));
-        visited[0][0] = true;
-        
+        PriorityQueue<State> queue = new PriorityQueue<>((a,b) -> (a.height - b.height));
+        queue.offer(new State(0,0, grid[0][0]));
         
         while(! queue.isEmpty()){
-            State currentState = queue.poll();
-            int currentRow = currentState.row, currentCol = currentState.col, currentHeight = currentState.height;
+            State state = queue.poll();
+            int currentRow = state.row, currentCol = state.col, currentHeight = state.height;
             
-            if(currentRow == rows -1 && currentCol == cols - 1)
+            if(currentRow == rows - 1 && currentCol == cols - 1)
                 return currentHeight;
             
             visited[currentRow][currentCol] = true;
+            
             for(int[] dir : dirs){
                 int nextRow = currentRow + dir[0];
                 int nextCol = currentCol + dir[1];
-                
-                if(nextRow >= 0 && nextRow < rows && nextCol >=0 && nextCol<cols && !visited[nextRow][nextCol])
+                if(nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && visited[nextRow][nextCol] == false){
                     queue.offer(new State(nextRow, nextCol, Math.max(currentHeight, grid[nextRow][nextCol])));
+                }
             }
             
         }
         
         return -1;
+        
     }
 }
