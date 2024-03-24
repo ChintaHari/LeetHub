@@ -1,23 +1,26 @@
 class Solution {
+    int[] piles;
     int limit;
     public int minEatingSpeed(int[] piles, int h) {
+        this.piles = piles;
         limit = h;
-        int minEatingSpeed = 1; //Consider it as variable "left" in binary Search 
-        int maxEatingSpeed = Arrays.stream(piles).max().getAsInt(); //Consider it as variable "right" in binary Search
+        
+        int minEatingSpeed = 1;
+        int maxEatingSpeed = Arrays.stream(piles).max().getAsInt();
         
         while(minEatingSpeed <= maxEatingSpeed){
             int middleEatingSpeed = minEatingSpeed + (maxEatingSpeed - minEatingSpeed)/2;
-            if(checkIfAllBananasCanBeEatenWithThisSpeed(middleEatingSpeed, piles))
+            if(checkIfAllBananasCanBeEatenWithThisMiddleSpeed(middleEatingSpeed))
                 maxEatingSpeed = middleEatingSpeed - 1;
             else
                 minEatingSpeed = middleEatingSpeed + 1;
         }
-        return minEatingSpeed; //Why return min? because they asked min k to eat all bananas
+        return minEatingSpeed;
     }
     
-    public boolean checkIfAllBananasCanBeEatenWithThisSpeed(double speed, int[] piles){
+    public boolean checkIfAllBananasCanBeEatenWithThisMiddleSpeed(double speed){
         double hours = 0;
-        for(double pile : piles)
+        for(int pile : piles)
             hours = hours + Math.ceil(pile/speed);
         return hours <= limit;
     }
