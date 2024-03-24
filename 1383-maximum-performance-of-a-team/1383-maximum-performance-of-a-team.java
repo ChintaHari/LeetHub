@@ -7,20 +7,23 @@ class Solution {
     public int maxPerformance(int n, int[] speed, int[] efficiency, int k) {
         List<int[]> list = new ArrayList<>();
         for(int i=0; i<n; i++)
-            list.add(new int[]{efficiency[i], speed[i]});
-        Collections.sort(list, (a,b) -> b[0]-a[0]);
+            list.add(new int[]{speed[i], efficiency[i]});
         
-        long maxPerformance = 0, currSpeed = 0;
-        int minEfficiency = Integer.MAX_VALUE;
+        Collections.sort(list, (a,b) -> b[1] - a[1]);
+        
+        long currentSpeed = 0;
+        int minEfficiency = list.get(0)[1];
+        long maxPerformance = Long.MIN_VALUE;
         int mod = (int)(Math.pow(10,9) + 7);
+        
         PriorityQueue<Integer> queue = new PriorityQueue<>();
-        for(int[] subList : list){
-            queue.add(subList[1]);
+        for(int[] sublist : list){
+            queue.add(sublist[0]);
             if(queue.size() > k)
-                currSpeed = currSpeed - queue.remove();
-            currSpeed = currSpeed + subList[1];
-            minEfficiency = Math.min(minEfficiency, subList[0]);
-            maxPerformance = Math.max(maxPerformance, (currSpeed * minEfficiency));
+                currentSpeed = currentSpeed - queue.remove();
+            currentSpeed = currentSpeed + sublist[0];
+            minEfficiency = Math.min(minEfficiency, sublist[1]);
+            maxPerformance = Math.max(maxPerformance, currentSpeed * minEfficiency);  
         }
         return (int) (maxPerformance % mod);
     }
