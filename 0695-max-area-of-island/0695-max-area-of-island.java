@@ -14,12 +14,10 @@ class Solution {
         
         for(int i=0; i<rows; i++){
             for(int j=0; j<cols; j++){
-                if(! visited[i][j]){
-                    currArea = 0;
-                    if(grid[i][j] == 1){
+                currArea = 0;
+                if(! visited[i][j] && grid[i][j] == 1){
                         currArea++;
                         dfs(i,j);
-                    }
                 }
             }
         }
