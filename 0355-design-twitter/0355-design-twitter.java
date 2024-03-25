@@ -1,25 +1,23 @@
 class Tweet{
-    int time;
-    int id;
+    int id, time;
     Tweet(int id, int time){
         this.id = id;
         this.time = time;
     }
 }
-
 class Twitter {
-    HashMap<Integer, Set<Integer>> followeeMap;
-    HashMap<Integer, List<Tweet>> tweetsMap;
+    Map<Integer, List<Tweet>> tweetsMap;
+    Map<Integer, Set<Integer>> followeeMap;
     int timeStamp;
 
     public Twitter() {
-        followeeMap = new HashMap<>();
         tweetsMap = new HashMap<>();
-        timeStamp =0;
+        followeeMap = new HashMap<>();
+        timeStamp=0;
     }
     
     public void postTweet(int userId, int tweetId) {
-        tweetsMap.computeIfAbsent(userId, k -> new ArrayList<>()).add(new Tweet(tweetId, timeStamp++));
+       tweetsMap.computeIfAbsent(userId, k -> new ArrayList<>()).add(new Tweet(tweetId, timeStamp++)); 
     }
     
     public List<Integer> getNewsFeed(int userId) {
@@ -36,8 +34,8 @@ class Twitter {
         List<Integer> result = new ArrayList<>();
         while(!queue.isEmpty() && result.size() < 10)
             result.add(queue.remove().id);
-        
         return result;
+        
     }
     
     public void follow(int followerId, int followeeId) {
