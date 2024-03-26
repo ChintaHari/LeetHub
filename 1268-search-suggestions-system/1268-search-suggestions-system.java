@@ -3,11 +3,11 @@ class TrieNode{
     List<String> suggestions = new ArrayList<>();
 }
 class Solution {
+    TrieNode root = new TrieNode();
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         Arrays.sort(products);
-        TrieNode root = new TrieNode();
         for(String product : products)
-            insertWord(product, root);
+            insertWord(product);
         
         List<List<String>> result = new ArrayList<>();
         TrieNode node = root;
@@ -23,7 +23,7 @@ class Solution {
         
     }
     
-    public void insertWord(String word, TrieNode root){
+    public void insertWord(String word){
         TrieNode node = root;
         for(char ch: word.toCharArray()){
             if(! node.map.containsKey(ch))
