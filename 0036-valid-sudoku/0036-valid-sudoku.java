@@ -11,9 +11,9 @@ class Solution {
 
                 String blockKey = (r / 3) + "-" + (c / 3);
                 
-                rows.putIfAbsent(r, new HashSet<>());
-                cols.putIfAbsent(c, new HashSet<>());
-                squares.putIfAbsent(blockKey, new HashSet<>());
+                rows.computeIfAbsent(r, k -> new HashSet<>());
+                cols.computeIfAbsent(c, k -> new HashSet<>());
+                squares.computeIfAbsent(blockKey, k -> new HashSet<>());
 
                 if (rows.get(r).contains(number) 
                     || cols.get(c).contains(number) || squares.get(blockKey).contains(number)) {
