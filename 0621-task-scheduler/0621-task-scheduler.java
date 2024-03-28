@@ -1,36 +1,23 @@
-class Solution {
+import java.util.*;
+
+public class Solution {
     public int leastInterval(char[] tasks, int n) {
-        int[] freq = new int[26];
-        for (char ch : tasks) {
-            freq[ch - 'A']++;
-        }
         
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        for (int i = 0; i < 26; i++) {
-            if (freq[i] > 0) {
-                pq.offer(freq[i]);
-            }
+        int[] frequencies = new int[26];
+        for (char task : tasks) {
+            frequencies[task - 'A']++;
         }
 
-        int time = 0;
+        Arrays.sort(frequencies); 
+
         
-        while (!pq.isEmpty()) {
-            int cycle = n + 1;
-            List<Integer> store = new ArrayList<>();
-            int taskCount = 0;
-            
-            while (cycle-- > 0 && !pq.isEmpty()) {
-                int currentFreq = pq.poll();
-                if (currentFreq > 1) {
-                    store.add(currentFreq - 1);
-                }
-                taskCount++;
-            }
-            
-            store.forEach(pq::offer);
-           
-            time += (pq.isEmpty() ? taskCount : n + 1);
+        int fMax = frequencies[25];
+        int idleTime = (fMax - 1) * n;
+        
+        for (int i = 24; i >= 0 && idleTime > 0; --i) {
+            idleTime -= Math.min(fMax - 1, frequencies[i]); 
         }
-        return time;
+        idleTime = Math.max(0, idleTime);
+        return tasks.length + idleTime;
     }
 }
