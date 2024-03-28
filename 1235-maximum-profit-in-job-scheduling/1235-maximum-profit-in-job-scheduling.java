@@ -6,31 +6,29 @@ class Job{
         this.profit = profit;
     }
 }
-
 class Solution {
     public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
         int n = startTime.length;
         Job[] jobs = new Job[n];
         
-        for(int i=0; i<n; i++)
+        for(int i=0; i< n; i++)
             jobs[i] = new Job(startTime[i], endTime[i], profit[i]);
         
         Arrays.sort(jobs, (a,b) -> a.end - b.end);
         
-        int[] dp = new int[n];
+        int dp[] = new int[n];
         dp[0] = jobs[0].profit;
         
         for(int i=1; i<n; i++){
-            int currentProfitOfTheInterval = jobs[i].profit;
-            for(int j=i-1; j>=0; j--){
+            int currentProfitForThisInterval = jobs[i].profit;
+            for(int j = i-1; j>=0; j--){
                 if(jobs[i].start >= jobs[j].end){
-                    currentProfitOfTheInterval = currentProfitOfTheInterval + dp[j];
+                    currentProfitForThisInterval = currentProfitForThisInterval + dp[j];
                     break;
                 }
             }
-            dp[i] = Math.max(dp[i-1], currentProfitOfTheInterval);
+            dp[i] = Math.max(dp[i-1], currentProfitForThisInterval);
         }
         return dp[n-1];
-        
     }
 }
