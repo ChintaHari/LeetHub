@@ -1,29 +1,31 @@
 class Solution {
     int[] subtreeSizes;
-    Map<Integer, List<Integer>> parentsToChildrenMap;
+    Map<Integer, List<Integer>> parentsToChildMap;
+    int n;
     public int countHighestScoreNodes(int[] parents) {
-        parentsToChildrenMap = new HashMap<>();
-        int n = parents.length;
+        parentsToChildMap = new HashMap<>();
+        int count = 0; 
+        long maxScore = Long.MIN_VALUE;
+        n = parents.length;
+        
         for(int i=0; i<n; i++)
-            parentsToChildrenMap.computeIfAbsent(parents[i], k -> new ArrayList<>()).add(i);
+            parentsToChildMap.computeIfAbsent(parents[i], k -> new ArrayList<>()).add(i);
         
         subtreeSizes = new int[n];
-        Arrays.fill(subtreeSizes, -1);
-        calculateSubtreeSizesAlongWithItelf(0);
+        computeSubtreeSizes(0);
         
-        long maxScore = 0;
-        int count = 0;
         for(int i=0; i<n; i++){
+            int totalSizeExcludingItself = n-1;
             long score = 1;
-            int totalSizeExcludingCurrentNode = n - 1;
             
-            for(int child : parentsToChildrenMap.getOrDefault(i, Collections.emptyList())){
+            for(int child : parentsToChildMap.getOrDefault(i, Collections.emptyList())){
                 score = score * subtreeSizes[child];
-                totalSizeExcludingCurrentNode = totalSizeExcludingCurrentNode - subtreeSizes[child];
+                totalSizeExcludingItself = totalSizeExcludingItself - subtreeSizes[child];
             }
-                
-            if(i != 0)
-                score = score * totalSizeExcludingCurrentNode;
+            
+            if(i != 0){
+                score = score * totalSizeExcludingItself;
+            }
             
             if(score > maxScore){
                 maxScore = score;
@@ -31,17 +33,16 @@ class Solution {
             }
             else if(score == maxScore)
                 count++;
-            
         }
         return count;
     }
     
-    public int calculateSubtreeSizesAlongWithItelf(int node){
-        int subtreeSizeAlongWithItelf = 1;
-        for(int child : parentsToChildrenMap.getOrDefault(node, Collections.emptyList()))
-            subtreeSizeAlongWithItelf = subtreeSizeAlongWithItelf + calculateSubtreeSizesAlongWithItelf(child);
+    public int computeSubtreeSizes(int node){
+        int subtreeSizeAlongWithItself = 1;
+        for(int child : parentsToChildMap.getOrDefault(node, Collections.emptyList()))
+            subtreeSizeAlongWithItself = subtreeSizeAlongWithItself + computeSubtreeSizes(child);
         
-        subtreeSizes[node] = subtreeSizeAlongWithItelf;
+        subtreeSizes[node] = subtreeSizeAlongWithItself;
         return subtreeSizes[node];
     }
 }
