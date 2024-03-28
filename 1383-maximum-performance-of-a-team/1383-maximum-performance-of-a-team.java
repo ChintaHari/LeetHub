@@ -22,8 +22,8 @@ class Solution {
             if(queue.size() > k)
                 currentSpeed = currentSpeed - queue.remove();
             currentSpeed = currentSpeed + sublist[0];
-            minEfficiency = Math.min(minEfficiency, sublist[1]);
-            maxPerformance = Math.max(maxPerformance, currentSpeed * minEfficiency);  
+            //minEfficiency = Math.min(minEfficiency, sublist[1]);
+            maxPerformance = Math.max(maxPerformance, currentSpeed * sublist[1]);  
         }
         return (int) (maxPerformance % mod);
     }
