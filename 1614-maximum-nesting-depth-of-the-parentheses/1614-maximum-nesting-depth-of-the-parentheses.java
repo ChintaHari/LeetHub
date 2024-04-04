@@ -3,9 +3,8 @@ class Solution {
         int maxLevel = Integer.MIN_VALUE;
         int currentLevel = 0;
         for(char ch : s.toCharArray()){
-            if(ch == '('){
-                maxLevel = Math.max(maxLevel, ++currentLevel);
-            }
+            if(ch == '(')
+                maxLevel = Math.max(maxLevel, ++currentLevel);  
             else if(ch == ')')
                 currentLevel--;
         }
