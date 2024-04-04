@@ -4,8 +4,7 @@ class Solution {
         int currentLevel = 0;
         for(char ch : s.toCharArray()){
             if(ch == '('){
-                currentLevel++;
-                maxLevel = Math.max(maxLevel, currentLevel);
+                maxLevel = Math.max(maxLevel, ++currentLevel);
             }
             else if(ch == ')')
                 currentLevel--;
