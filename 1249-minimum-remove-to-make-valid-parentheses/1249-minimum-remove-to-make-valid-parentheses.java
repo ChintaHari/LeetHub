@@ -3,9 +3,9 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         int open = 0;
         for (char c : s.toCharArray()) {
-            if (c == '(') {
+            if (c == '(') 
                 open++;
-            } 
+            
             else if (c == ')') {
                 if (open == 0) 
                     continue; 
@@ -14,10 +14,14 @@ class Solution {
             sb.append(c);
         }
         
+        System.out.println(sb);
+        
         StringBuilder result = new StringBuilder();
         for (int i = sb.length() - 1; i >= 0; i--) {
-            if (sb.charAt(i) == '(' && open-- > 0) 
-                continue; 
+            if (sb.charAt(i) == '(' && open > 0) {
+                open --;
+                continue;
+            } 
             result.append(sb.charAt(i)); 
         }
         
