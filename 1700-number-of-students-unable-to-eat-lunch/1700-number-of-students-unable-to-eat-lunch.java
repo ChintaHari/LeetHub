@@ -12,8 +12,9 @@ class Solution {
         int cannotEat = 0;
         while(!stack.isEmpty()) {
             int currentTopSandwich = stack.peek();
+            int currentStudent = queue.peek();
             
-            if(queue.peek() == currentTopSandwich) {
+            if(currentStudent == currentTopSandwich) {
                 stack.pop();
                 queue.poll();
                 cannotEat = 0; 
