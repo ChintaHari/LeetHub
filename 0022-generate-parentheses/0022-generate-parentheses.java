@@ -1,15 +1,17 @@
 class Solution {
-    List<String> result = new ArrayList<>();
+    int size = 0;
+    int left = 0, right = 0;
+    List<String> list = new ArrayList<>();
     StringBuilder sb = new StringBuilder();
-    int size, left = 0, right = 0;
     public List<String> generateParenthesis(int n) {
-        size = n;
+        this.size = n;
         backtrack(sb, left, right);
-        return result; 
+        return list;
     }
+    
     public void backtrack(StringBuilder sb, int left, int right){
         if(sb.length() == 2 * size){
-            result.add(sb.toString());
+            list.add(sb.toString());
             return;
         }
         
