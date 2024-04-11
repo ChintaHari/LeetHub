@@ -8,22 +8,22 @@
  * }
  */
 class Solution {
-    Map<TreeNode, TreeNode> parents = new HashMap<>();
-    Set<TreeNode> visited = new HashSet<>();
-    Queue<TreeNode> queue = new LinkedList<>();
-    
+    HashMap<TreeNode, TreeNode> nodeToParentMap = new HashMap<>();
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
-        dfs(root, null);
+        constructNodeToParent(root, null);
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        Set<TreeNode> visited = new HashSet<>();
+        int distance = 0;
         
         queue.offer(target);
         visited.add(target);
-        int distance = 0;
         
-        while(! queue.isEmpty() && distance < k){
+        while(!queue.isEmpty() && distance < k){
             int nodesAtCurrentLevel = queue.size();
             for(int i=0; i<nodesAtCurrentLevel; i++){
                 TreeNode node = queue.poll();
-                for(TreeNode neighbour : new TreeNode[]{node.left, node.right, parents.get(node)}){
+                for(TreeNode neighbour : new TreeNode[]{node.left, node.right, nodeToParentMap.get(node)}){
                     if(neighbour != null && !visited.contains(neighbour)){
                         visited.add(neighbour);
                         queue.offer(neighbour);
@@ -33,19 +33,20 @@ class Solution {
             distance++;
         }
         
-        List<Integer> list = new ArrayList<>();
-        for(TreeNode node: queue)
-            list.add(node.val);
+        List<Integer> result = new ArrayList<>();
+        while(!queue.isEmpty())
+            result.add(queue.remove().val);
         
-        return list;
+        
+        return result;
         
     }
     
-    public void dfs(TreeNode node, TreeNode parent){
+    public void constructNodeToParent(TreeNode node, TreeNode parent){
         if(node == null)
             return;
-        parents.put(node, parent);
-        dfs(node.left, node);
-        dfs(node.right, node);
+        nodeToParentMap.put(node, parent);
+        constructNodeToParent(node.left, node);
+        constructNodeToParent(node.right, node);
     }
 }
