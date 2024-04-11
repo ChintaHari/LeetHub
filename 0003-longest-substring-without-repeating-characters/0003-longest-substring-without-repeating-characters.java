@@ -10,7 +10,7 @@ class Solution {
             char rightChar = s.charAt(right);
             hm.put(rightChar, hm.getOrDefault(rightChar, 0) + 1);
             while(left < s.length() && hm.get(rightChar) > 1){
-                ans = Math.max(ans, right - left);
+               // ans = Math.max(ans, right - left);
                 char leftChar = s.charAt(left);
                 hm.put(leftChar, hm.getOrDefault(leftChar, 0) - 1);
                 if(hm.get(leftChar) < 1)
