@@ -22,12 +22,8 @@ class Solution {
         
         List<String> result = new ArrayList<>();
         for(Map.Entry<String, Integer> entry : map.entrySet()){
-            StringBuilder sb = new StringBuilder();
-            sb.insert(0, entry.getKey());
-            sb.insert(0, " ");
-            sb.insert(0, entry.getValue());
-            
-            result.add(sb.toString());
+            String res = entry.getValue() + " " + entry.getKey();
+            result.add(res);
         }
         
         return result;
