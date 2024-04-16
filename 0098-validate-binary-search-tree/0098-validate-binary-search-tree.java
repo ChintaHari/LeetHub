@@ -13,27 +13,21 @@
  *     }
  * }
  */
-
 class Solution {
-    private List<Integer> list = new ArrayList<>();
-
+    List<Integer> list = new ArrayList<>();
     public boolean isValidBST(TreeNode root) {
         inOrderTraversal(root);
-
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i) >= list.get(i + 1)) {
+        
+        for(int i=0; i<list.size() - 1; i++){
+            if(list.get(i) >= list.get(i+1))
                 return false;
-            }
         }
-
         return true;
     }
-
-    private void inOrderTraversal(TreeNode node) {
-        if (node == null) {
+    
+    public void inOrderTraversal(TreeNode node){
+        if(node == null)
             return;
-        }
-
         inOrderTraversal(node.left);
         list.add(node.val);
         inOrderTraversal(node.right);
