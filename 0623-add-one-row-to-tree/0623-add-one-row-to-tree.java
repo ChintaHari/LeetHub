@@ -46,13 +46,10 @@ class Solution {
                 int nodesAtCurrentLevel = queue.size();
                 for (int i = 0; i < nodesAtCurrentLevel; i++) {
                     TreeNode node = queue.poll();
-
-                    if (node.left != null) {
+                    if (node.left != null) 
                         queue.offer(node.left);
-                    }
-                    if (node.right != null) {
+                    if (node.right != null) 
                         queue.offer(node.right);
-                    }
                 }
                 currDepth++;
             }
