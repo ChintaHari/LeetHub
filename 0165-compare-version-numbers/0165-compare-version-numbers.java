@@ -9,7 +9,6 @@ class Solution {
         for (int i = 0; i < maxLen; i++) {
             int firstToken = i < tokens1.length ? Integer.parseInt(tokens1[i]) : 0;
             int secondToken = i < tokens2.length ? Integer.parseInt(tokens2[i]) : 0;
-            
       
             if (firstToken > secondToken) 
                 return 1;
