@@ -45,7 +45,9 @@ class Solution {
         
         for(int row = 0; row < rows; row++){
             for(int col = 0; col < cols; col++){
-                int decimalValueOfTheCurrentCell = grid[row][col] << (cols - col - 1);
+                // int decimalValueOfTheCurrentCell = grid[row][col] << (cols - col - 1);
+                // score = score + decimalValueOfTheCurrentCell;
+                int decimalValueOfTheCurrentCell = grid[row][col] == 1 ? (int)Math.pow(2, cols - col - 1) : 0;
                 score = score + decimalValueOfTheCurrentCell;
             }
         }
