@@ -5,6 +5,7 @@
 4. So how did I do the step 3?
     - I iterated over each row and each column of the grid.
     - I calculated the decimal value of the current cell by multiplying the value of the current cell with 2 raised to the power of (cols - col - 1).
+    - The above step is called LEFT SHIFT
     - I added the decimal value of the current cell to the score.
     - Finally, I returned the score.
 */
