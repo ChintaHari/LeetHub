@@ -15,7 +15,7 @@
  */
 
 // Recursive DFS
-/* class Solution {
+class Solution {
     public boolean evaluateTree(TreeNode root) {
         if(root.left == null && root.right == null)
             return root.val == 1;
@@ -28,10 +28,10 @@
         else
             return left & right;
     }
-} */
+} 
 
 // Iterative DFS
-class Solution {
+/* class Solution {
     public boolean evaluateTree(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         Map<TreeNode, Boolean> map = new HashMap<>();
@@ -59,3 +59,4 @@ class Solution {
         return map.get(root);
     }
 }
+*/
