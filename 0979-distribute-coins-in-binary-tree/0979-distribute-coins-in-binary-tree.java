@@ -14,26 +14,24 @@
  * }
  */
 class Solution {
-    int res;
+    int moves;
     public int distributeCoins(TreeNode root) {
-        
-        res = 0;
+        moves = 0;
         dfs(root);
-        return res;
+        return moves;
     }
 
-    private int[] dfs(TreeNode cur) {
-        if (cur == null) {
+    private int[] dfs(TreeNode node) {
+        if (node == null) 
             return new int[]{0, 0};
-        }
 
-        int[] l = dfs(cur.left);
-        int[] r = dfs(cur.right);
+        int[] left_node = dfs(node.left);
+        int[] right_node = dfs(node.right);
         
-        int size = 1 + l[0] + r[0];
-        int coins = cur.val + l[1] + r[1];
+        int size = 1 + left_node[0] + right_node[0];
+        int coins = node.val + left_node[1] + right_node[1];
         
-        res += Math.abs(size - coins);
+        moves = moves + Math.abs(size - coins);
         
         return new int[]{size, coins};
     }
