@@ -8,11 +8,11 @@ class Solution {
         
         int result = 0;
         for (List<Integer> subset : ans) {
-            int subsetXORTotal = 0;
+            int subsetXOR = 0;
             for (int num : subset) 
-                subsetXORTotal = subsetXORTotal ^ num;
+                subsetXOR = subsetXOR ^ num;
             
-            result = result + subsetXORTotal;
+            result = result + subsetXOR;
         }
         
         return result;
