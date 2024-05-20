@@ -4,7 +4,6 @@ class Solution {
     public int subsetXORSum(int[] nums) {
         this.nums = nums;
         backtrack(new ArrayList<>(), 0);
-        System.out.println(ans);
         
         int result = 0;
         for (List<Integer> subset : ans) {
