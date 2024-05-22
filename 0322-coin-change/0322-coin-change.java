@@ -1,31 +1,31 @@
 class Solution {
-    int[] memo;
+    int[] memo, coins;
     public int coinChange(int[] coins, int amount) {
+        this.coins = coins;
         memo = new int[amount + 1];
         Arrays.fill(memo, -2);
+        memo[0] = 0;
         
-        return dfs(coins, amount);
+        dfs(amount);
+        return memo[amount];
     }
     
-    public int dfs(int[] coins, int remain){
+    public int dfs(int remain){
         if(remain < 0)
             return -1;
-        
-        if(remain == 0)
-            return 0;
         
         if(memo[remain] != -2)
             return memo[remain];
         
-        int minCoinCount = Integer.MAX_VALUE;
+        int minCount = Integer.MAX_VALUE;
         for(int coin : coins){
-            int count = dfs(coins, remain - coin);
+            int count = dfs(remain - coin);
             if(count == -1)
                 continue;
-            minCoinCount = Math.min(minCoinCount, count + 1);
+            minCount = Math.min(minCount, count + 1);
         }
         
-        memo[remain] = minCoinCount == Integer.MAX_VALUE ? -1 : minCoinCount;
+        memo[remain] = minCount == Integer.MAX_VALUE ? -1 : minCount;
         return memo[remain];
     }
 }
