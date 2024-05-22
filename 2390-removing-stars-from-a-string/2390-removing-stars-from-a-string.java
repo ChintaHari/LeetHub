@@ -10,7 +10,7 @@ class Solution {
         }
         
         char[] result = new char[stack.size()];
-        for(int i = stack.size() - 1; i>=0 && !stack.isEmpty(); i--){
+        for(int i = stack.size() - 1; i>=0; i--){
             result[i] = stack.pop();
         }
         
