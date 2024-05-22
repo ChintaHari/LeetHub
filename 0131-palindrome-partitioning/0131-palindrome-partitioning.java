@@ -1,19 +1,18 @@
 class Solution {
-    List<List<String>> result = new ArrayList<>();
+    List<List<String>> ans = new ArrayList<>();
     List<String> curr = new ArrayList<>();
-    int index=0;
     public List<List<String>> partition(String s) {
-        backtrack(s, index);
-        return result;
+        backtrack(s, 0);
+        return ans;
     }
     
     public void backtrack(String s, int index){
-        if(index >= s.length()){
-            result.add(new ArrayList<>(curr));
+        if(index == s.length()){
+            ans.add(new ArrayList<>(curr));
             return;
         }
         
-        for(int j=index; j<s.length(); j++){
+        for(int j = index; j < s.length(); j++){
             if(isPalindrome(s, index, j)){
                 curr.add(s.substring(index, j+1));
                 backtrack(s, j+1);
@@ -23,15 +22,14 @@ class Solution {
     }
     
     public boolean isPalindrome(String s, int left, int right){
-        while(left < right ){
+        while(left < right){
             if(s.charAt(left) != s.charAt(right))
                 return false;
             else{
-                left ++;
-                right --;
+                left++;
+                right--;
             }
         }
-        
         return true;
     }
 }
