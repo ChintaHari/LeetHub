@@ -12,10 +12,10 @@ public class Solution {
 
         int count = 0;
 
-        for (int start = 0; start < size; start++) {
-            for (int end = start + 1; end < size; end++) {
-                if (prefixXOR[start] == prefixXOR[end]) 
-                    count = count + end - start - 1;
+        for (int left = 0; left < size; left++) {
+            for (int right = left + 1; right < size; right++) {
+                if (prefixXOR[left] == prefixXOR[right]) 
+                    count = count + right - left - 1;
                 
             }
         }
