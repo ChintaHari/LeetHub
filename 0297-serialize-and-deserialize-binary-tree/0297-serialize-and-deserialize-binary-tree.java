@@ -35,7 +35,7 @@ public class Codec {
     
     public TreeNode deserializeHelper(Queue<String> nodes){
         String value = nodes.poll();
-        if(value.equals("null"))
+        if("null".equals(value))
             return null;
         TreeNode node = new TreeNode(Integer.parseInt(value));
         node.left = deserializeHelper(nodes);
