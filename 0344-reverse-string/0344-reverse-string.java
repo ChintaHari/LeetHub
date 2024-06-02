@@ -8,9 +8,6 @@ class Solution {
             
             left++;
             right--;
-        }
-        for(char ch : s)
-            System.out.print(ch + " ");
-        
+        }     
     }
 }
