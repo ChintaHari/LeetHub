@@ -1,3 +1,5 @@
+// Watch: https://www.youtube.com/watch?v=4xbWSRZHqac&t=737s
+
 class Solution {
     public void sortColors(int[] nums) {
         int left = 0, right = nums.length - 1;
