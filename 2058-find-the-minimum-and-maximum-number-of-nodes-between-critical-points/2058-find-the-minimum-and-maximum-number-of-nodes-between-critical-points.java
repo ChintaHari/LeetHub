@@ -45,8 +45,7 @@ class Solution {
             int minDistance = Integer.MAX_VALUE;
             for(int i=1; i < critical.length; i++)
                 minDistance = Math.min(minDistance, critical[i] - critical[i-1]);
-            return new int[]{minDistance, maxDistance};
-                
+            return new int[]{minDistance, maxDistance};     
         }
         
     }
