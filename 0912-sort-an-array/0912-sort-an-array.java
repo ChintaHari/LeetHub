@@ -1,6 +1,5 @@
 class Solution {
     public int[] sortArray(int[] nums) {
-        List<Integer> res = new ArrayList<>();
         if (nums == null || nums.length == 0)
             return new int[0];
         mergeSort(nums, 0, nums.length - 1);
