@@ -6,12 +6,9 @@ class Solution {
         rows = grid.length;
         cols = grid[0].length;
 
-        int initialIslandCount = countIslands(grid);
-
-        if (initialIslandCount != 1) 
+        if (countIslands(grid) != 1) 
             return 0;
         
-
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 if (grid[row][col] == 0)
