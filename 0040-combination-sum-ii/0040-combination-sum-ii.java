@@ -17,7 +17,7 @@ class Solution {
         }
         
         for(int i=index; i<candidates.length; i++){
-            if (i > index && candidates[i] == candidates[i - 1])
+            if (i>index && candidates[i] == candidates[i - 1])
                 continue;
             int currentUpdatedSum = currSum + candidates[i];
             if(currentUpdatedSum <= target && !visited[i]){
