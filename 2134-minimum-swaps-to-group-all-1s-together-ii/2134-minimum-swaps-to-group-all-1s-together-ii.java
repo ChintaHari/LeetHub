@@ -6,6 +6,10 @@ class Solution {
         n = nums.length;
         
         int numberOfSwapsNeededForZero = swapsCountFinder(0);
+        
+        if(numberOfSwapsNeededForZero == 0 || numberOfSwapsNeededForZero == n)
+            return 0;
+        
         int numberOfSwapsNeededForOne = swapsCountFinder(1);
         
         return Math.min(numberOfSwapsNeededForZero, numberOfSwapsNeededForOne);
