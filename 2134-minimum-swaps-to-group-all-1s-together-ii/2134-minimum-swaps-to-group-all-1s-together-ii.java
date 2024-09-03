@@ -1,44 +1,42 @@
 class Solution {
-
+    int[] nums;
+    int n = 0;
     public int minSwaps(int[] nums) {
-        int op1 = minSwapsHelper(nums, 0); 
-        int op2 = minSwapsHelper(nums, 1); 
-        return Math.min(op1, op2);
+        this.nums = nums;
+        n = nums.length;
+        
+        int numberOfSwapsNeededForZero = swapsCountFinder(0);
+        int numberOfSwapsNeededForOne = swapsCountFinder(1);
+        
+        return Math.min(numberOfSwapsNeededForZero, numberOfSwapsNeededForOne);
     }
-
     
-    public int minSwapsHelper(int[] data, int val) {
-        int length = data.length;
-        int totalValCount = 0;
-
-        for (int i = length - 1; i >= 0; i--) 
-            if (data[i] == val)
-                totalValCount++;
+    public int swapsCountFinder(int value){
+        int totalCountOfValueInArray = 0;
         
-        if (totalValCount == 0 || totalValCount == length)
+        for(int i=0; i<n; i++)
+            if(nums[i] == value)
+                totalCountOfValueInArray++;
+        
+        if(totalCountOfValueInArray == 0 || totalCountOfValueInArray == n)
             return 0;
-
-        int start = 0, end = 0;
-        int maxValInWindow = 0, currentValInWindow = 0;
-
-
-        while (end < totalValCount) 
-            if (data[end++] == val)
-                currentValInWindow++;
         
-        maxValInWindow = Math.max(maxValInWindow, currentValInWindow);
-
-
-        while (end < length) {
-            if (data[start++] == val)
-                currentValInWindow--;
+        int left = 0, right = 0;
+        int maxCountOfValueInWindow = 0, currentCountOfValueInWindow = 0;
+        
+        for(right = 0; right < n; right++){
+            if(nums[right] == value)
+                currentCountOfValueInWindow++;
             
-            if (data[end++] == val)
-                currentValInWindow++;
+            if(right - left + 1 > totalCountOfValueInArray){
+                if(nums[left] == value)
+                    currentCountOfValueInWindow--;
+                left++;
+            }
             
-            maxValInWindow = Math.max(maxValInWindow, currentValInWindow);
+            maxCountOfValueInWindow = Math.max(maxCountOfValueInWindow, currentCountOfValueInWindow);
         }
-
-        return totalValCount - maxValInWindow;
+        
+        return totalCountOfValueInArray - maxCountOfValueInWindow;
     }
 }
