@@ -25,8 +25,8 @@ class Solution {
         
         
         while(!queue.isEmpty()){
-            int size = queue.size();
-            for(int i=0; i<size; i++){
+            int nodesAtCurrentLevel = queue.size();
+            for(int i=0; i<nodesAtCurrentLevel; i++){
                 int currentNodeValue = queue.poll();
                 for(int adjacentNodeValue : graph.get(currentNodeValue)){
                     if(! visited.contains(adjacentNodeValue)){
