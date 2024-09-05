@@ -19,7 +19,7 @@ class Solution {
         queue.offer(target);
         visited.add(target);
         
-        while(!queue.isEmpty() && distance < k){
+        while(!queue.isEmpty() && k > 0){
             int nodesAtCurrentLevel = queue.size();
             for(int i=0; i<nodesAtCurrentLevel; i++){
                 TreeNode node = queue.poll();
@@ -30,7 +30,7 @@ class Solution {
                     }
                 }
             }
-            distance++;
+            k--;
         }
         
         List<Integer> result = new ArrayList<>();
