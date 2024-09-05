@@ -24,11 +24,11 @@ class Solution {
                 int nextRow = row + dir[0], nextCol = col + dir[1];
 
                 if (valid(nextRow, nextCol, grid)) {
-                    int nextObstacles = obstacles - grid[nextRow][nextCol];
+                    int remainingObstacles = obstacles - grid[nextRow][nextCol];
 
-                    if (nextObstacles >= 0 && !visited[nextRow][nextCol][nextObstacles]) {
-                        visited[nextRow][nextCol][nextObstacles] = true;
-                        queue.offer(new int[]{nextRow, nextCol, steps + 1, nextObstacles});
+                    if (remainingObstacles >= 0 && !visited[nextRow][nextCol][remainingObstacles]) {
+                        visited[nextRow][nextCol][remainingObstacles] = true;
+                        queue.offer(new int[]{nextRow, nextCol, steps + 1, remainingObstacles});
                     }
                 }
             }
