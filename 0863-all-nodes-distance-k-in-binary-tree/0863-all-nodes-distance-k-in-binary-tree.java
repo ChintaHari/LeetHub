@@ -8,23 +8,23 @@
  * }
  */
 class Solution {
-    HashMap<TreeNode, TreeNode> nodeToParentMap = new HashMap<>();
+    Map<TreeNode, TreeNode> nodeToParentMap = new HashMap<>();
+    List<Integer> result = new ArrayList<>();
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
-        constructNodeToParent(root, null);
+        constructNodeToParentMap(root, null);
         
-        Queue<TreeNode> queue = new LinkedList<>();
         Set<TreeNode> visited = new HashSet<>();
-        int distance = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
         
-        queue.offer(target);
         visited.add(target);
+        queue.offer(target);
         
         while(!queue.isEmpty() && k > 0){
-            int nodesAtCurrentLevel = queue.size();
-            for(int i=0; i<nodesAtCurrentLevel; i++){
+            int numberOfNodesAtCurrentLevel = queue.size();
+            for(int i=0; i<numberOfNodesAtCurrentLevel; i++){
                 TreeNode node = queue.poll();
                 for(TreeNode neighbour : new TreeNode[]{node.left, node.right, nodeToParentMap.get(node)}){
-                    if(neighbour != null && !visited.contains(neighbour)){
+                    if(neighbour!= null && !visited.contains(neighbour)){
                         visited.add(neighbour);
                         queue.offer(neighbour);
                     }
@@ -33,20 +33,19 @@ class Solution {
             k--;
         }
         
-        List<Integer> result = new ArrayList<>();
         while(!queue.isEmpty())
-            result.add(queue.remove().val);
-        
+            result.add(queue.poll().val);
         
         return result;
-        
     }
     
-    public void constructNodeToParent(TreeNode node, TreeNode parent){
+    public void constructNodeToParentMap(TreeNode node, TreeNode parent){
+        
         if(node == null)
             return;
+        
         nodeToParentMap.put(node, parent);
-        constructNodeToParent(node.left, node);
-        constructNodeToParent(node.right, node);
+        constructNodeToParentMap(node.left, node);
+        constructNodeToParentMap(node.right, node);
     }
 }
