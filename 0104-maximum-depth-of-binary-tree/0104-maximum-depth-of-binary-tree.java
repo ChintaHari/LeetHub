@@ -13,14 +13,39 @@
  *     }
  * }
  */
+
+class Pair{
+    TreeNode node;
+    int depth;
+    Pair(TreeNode node, int depth){
+        this.node = node;
+        this.depth = depth;
+    }
+}
 class Solution {
     public int maxDepth(TreeNode root) {
-        if(root == null){
-            return 0;
-        }
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-        return Math.max(left, right)+1;
         
+        if(root == null)
+            return 0;
+        
+        Stack<Pair> stack = new Stack<>();
+        int ans = 0;
+        stack.push(new Pair(root, 1));
+        
+        while(!stack.isEmpty()){
+            Pair pair = stack.pop();
+            TreeNode currentNode = pair.node;
+            int currentDepth = pair.depth;
+            
+            ans = Math.max(ans, currentDepth);
+            
+            if(currentNode.left != null)
+                stack.push(new Pair(currentNode.left, currentDepth + 1));
+            
+            if(currentNode.right != null)
+                stack.push(new Pair(currentNode.right, currentDepth + 1));
+        }
+        
+        return ans;
     }
 }
