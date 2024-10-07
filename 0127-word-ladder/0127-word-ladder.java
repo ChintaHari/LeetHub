@@ -43,7 +43,7 @@ class Solution {
 
         for (int i = 0; i < node.length(); i++) {
             char[] charArray = node.toCharArray();
-            for (char ch : chars) {
+            for (char ch = 'a'; ch <= 'z'; ch++) {
                 charArray[i] = ch;
                 String modifiedWord = new String(charArray);
                 if (wordSet.contains(modifiedWord))
