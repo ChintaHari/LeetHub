@@ -4,7 +4,7 @@ class MedianFinder {
 
     public MedianFinder() {
         minHeap = new PriorityQueue<>();
-        maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+        maxHeap = new PriorityQueue<>((a,b) -> b - a);
     }
     
     public void addNum(int num) {
