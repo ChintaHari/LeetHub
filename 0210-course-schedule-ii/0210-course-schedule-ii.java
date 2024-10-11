@@ -13,6 +13,7 @@ class Solution {
         
         for(int[] prerequisite : prerequisites)
             hm.get(prerequisite[0]).add(prerequisite[1]);
+            //hm.get(prerequisite[1]).add(prerequisite[0]);
         
         for(int course = 0; course < numCourses; course++){
             if(!visited[course])
