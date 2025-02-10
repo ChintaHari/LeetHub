@@ -67,6 +67,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [1915-check-if-one-string-swap-can-make-strings-equal](https://github.com/ChintaHari/LeetHub/tree/master/1915-check-if-one-string-swap-can-make-strings-equal) |
+| [3447-clear-digits](https://github.com/ChintaHari/LeetHub/tree/master/3447-clear-digits) |
 ## Counting
 |  |
 | ------- |
@@ -77,6 +78,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/ChintaHari/LeetHub/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
+| [3447-clear-digits](https://github.com/ChintaHari/LeetHub/tree/master/3447-clear-digits) |
 ## Design
 |  |
 | ------- |
@@ -93,4 +95,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2448-count-number-of-bad-pairs](https://github.com/ChintaHari/LeetHub/tree/master/2448-count-number-of-bad-pairs) |
+## Stack
+|  |
+| ------- |
+| [3447-clear-digits](https://github.com/ChintaHari/LeetHub/tree/master/3447-clear-digits) |
 <!---LeetCode Topics End-->
