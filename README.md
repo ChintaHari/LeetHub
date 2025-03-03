@@ -46,6 +46,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1878-check-if-array-is-sorted-and-rotated](https://github.com/ChintaHari/LeetHub/tree/master/1878-check-if-array-is-sorted-and-rotated) |
 | [1927-maximum-ascending-subarray-sum](https://github.com/ChintaHari/LeetHub/tree/master/1927-maximum-ascending-subarray-sum) |
 | [2107-find-unique-binary-string](https://github.com/ChintaHari/LeetHub/tree/master/2107-find-unique-binary-string) |
+| [2265-partition-array-according-to-given-pivot](https://github.com/ChintaHari/LeetHub/tree/master/2265-partition-array-according-to-given-pivot) |
 | [2448-count-number-of-bad-pairs](https://github.com/ChintaHari/LeetHub/tree/master/2448-count-number-of-bad-pairs) |
 | [2473-max-sum-of-a-pair-with-equal-sum-of-digits](https://github.com/ChintaHari/LeetHub/tree/master/2473-max-sum-of-a-pair-with-equal-sum-of-digits) |
 | [2551-apply-operations-to-an-array](https://github.com/ChintaHari/LeetHub/tree/master/2551-apply-operations-to-an-array) |
@@ -101,6 +102,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2021-remove-all-occurrences-of-a-substring](https://github.com/ChintaHari/LeetHub/tree/master/2021-remove-all-occurrences-of-a-substring) |
+| [2265-partition-array-according-to-given-pivot](https://github.com/ChintaHari/LeetHub/tree/master/2265-partition-array-according-to-given-pivot) |
 | [2551-apply-operations-to-an-array](https://github.com/ChintaHari/LeetHub/tree/master/2551-apply-operations-to-an-array) |
 | [3332-minimum-operations-to-exceed-threshold-value-ii](https://github.com/ChintaHari/LeetHub/tree/master/3332-minimum-operations-to-exceed-threshold-value-ii) |
 | [3434-find-the-number-of-distinct-colors-among-the-balls](https://github.com/ChintaHari/LeetHub/tree/master/3434-find-the-number-of-distinct-colors-among-the-balls) |
@@ -177,6 +179,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 |  |
 | ------- |
+| [2265-partition-array-according-to-given-pivot](https://github.com/ChintaHari/LeetHub/tree/master/2265-partition-array-according-to-given-pivot) |
 | [2551-apply-operations-to-an-array](https://github.com/ChintaHari/LeetHub/tree/master/2551-apply-operations-to-an-array) |
 | [2707-merge-two-2d-arrays-by-summing-values](https://github.com/ChintaHari/LeetHub/tree/master/2707-merge-two-2d-arrays-by-summing-values) |
 <!---LeetCode Topics End-->
