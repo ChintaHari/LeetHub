@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0199-binary-tree-right-side-view](https://github.com/ChintaHari/LeetHub/tree/master/0199-binary-tree-right-side-view) |
+| [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0684-redundant-connection](https://github.com/ChintaHari/LeetHub/tree/master/0684-redundant-connection) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [1093-recover-a-tree-from-preorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/1093-recover-a-tree-from-preorder-traversal) |
@@ -30,6 +31,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0199-binary-tree-right-side-view](https://github.com/ChintaHari/LeetHub/tree/master/0199-binary-tree-right-side-view) |
+| [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0684-redundant-connection](https://github.com/ChintaHari/LeetHub/tree/master/0684-redundant-connection) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [1387-find-elements-in-a-contaminated-binary-tree](https://github.com/ChintaHari/LeetHub/tree/master/1387-find-elements-in-a-contaminated-binary-tree) |
@@ -42,6 +44,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0015-3sum](https://github.com/ChintaHari/LeetHub/tree/master/0015-3sum) |
 | [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
 | [0054-spiral-matrix](https://github.com/ChintaHari/LeetHub/tree/master/0054-spiral-matrix) |
+| [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
@@ -68,6 +71,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Union Find
 |  |
 | ------- |
+| [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0684-redundant-connection](https://github.com/ChintaHari/LeetHub/tree/master/0684-redundant-connection) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [2583-divide-nodes-into-the-maximum-number-of-groups](https://github.com/ChintaHari/LeetHub/tree/master/2583-divide-nodes-into-the-maximum-number-of-groups) |
@@ -76,6 +80,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0054-spiral-matrix](https://github.com/ChintaHari/LeetHub/tree/master/0054-spiral-matrix) |
+| [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [2764-maximum-number-of-fish-in-a-grid](https://github.com/ChintaHari/LeetHub/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 | [3227-find-missing-and-repeated-values](https://github.com/ChintaHari/LeetHub/tree/master/3227-find-missing-and-repeated-values) |
