@@ -81,6 +81,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 |  |
 | ------- |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
 | [1364-tuple-with-same-product](https://github.com/ChintaHari/LeetHub/tree/master/1364-tuple-with-same-product) |
@@ -98,6 +99,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1093-recover-a-tree-from-preorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/1093-recover-a-tree-from-preorder-traversal) |
 | [1170-shortest-common-supersequence](https://github.com/ChintaHari/LeetHub/tree/master/1170-shortest-common-supersequence) |
 | [1483-rank-teams-by-votes](https://github.com/ChintaHari/LeetHub/tree/master/1483-rank-teams-by-votes) |
@@ -112,6 +114,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Counting
 |  |
 | ------- |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1364-tuple-with-same-product](https://github.com/ChintaHari/LeetHub/tree/master/1364-tuple-with-same-product) |
 | [1483-rank-teams-by-votes](https://github.com/ChintaHari/LeetHub/tree/master/1483-rank-teams-by-votes) |
 | [1915-check-if-one-string-swap-can-make-strings-equal](https://github.com/ChintaHari/LeetHub/tree/master/1915-check-if-one-string-swap-can-make-strings-equal) |
@@ -136,6 +139,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Heap (Priority Queue)
 |  |
 | ------- |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [2434-design-a-number-container-system](https://github.com/ChintaHari/LeetHub/tree/master/2434-design-a-number-container-system) |
 | [2473-max-sum-of-a-pair-with-equal-sum-of-digits](https://github.com/ChintaHari/LeetHub/tree/master/2473-max-sum-of-a-pair-with-equal-sum-of-digits) |
 | [3332-minimum-operations-to-exceed-threshold-value-ii](https://github.com/ChintaHari/LeetHub/tree/master/3332-minimum-operations-to-exceed-threshold-value-ii) |
@@ -163,6 +167,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ChintaHari/LeetHub/tree/master/0015-3sum) |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1483-rank-teams-by-votes](https://github.com/ChintaHari/LeetHub/tree/master/1483-rank-teams-by-votes) |
 | [2473-max-sum-of-a-pair-with-equal-sum-of-digits](https://github.com/ChintaHari/LeetHub/tree/master/2473-max-sum-of-a-pair-with-equal-sum-of-digits) |
 ## Data Stream
@@ -230,4 +235,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2059-unique-length-3-palindromic-subsequences](https://github.com/ChintaHari/LeetHub/tree/master/2059-unique-length-3-palindromic-subsequences) |
+## Greedy
+|  |
+| ------- |
+| [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 <!---LeetCode Topics End-->
