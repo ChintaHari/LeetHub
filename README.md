@@ -40,6 +40,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ChintaHari/LeetHub/tree/master/0015-3sum) |
+| [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
 | [0054-spiral-matrix](https://github.com/ChintaHari/LeetHub/tree/master/0054-spiral-matrix) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
@@ -81,6 +82,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
@@ -99,6 +101,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1093-recover-a-tree-from-preorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/1093-recover-a-tree-from-preorder-traversal) |
 | [1170-shortest-common-supersequence](https://github.com/ChintaHari/LeetHub/tree/master/1170-shortest-common-supersequence) |
@@ -167,6 +170,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ChintaHari/LeetHub/tree/master/0015-3sum) |
+| [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1483-rank-teams-by-votes](https://github.com/ChintaHari/LeetHub/tree/master/1483-rank-teams-by-votes) |
 | [2473-max-sum-of-a-pair-with-equal-sum-of-digits](https://github.com/ChintaHari/LeetHub/tree/master/2473-max-sum-of-a-pair-with-equal-sum-of-digits) |
