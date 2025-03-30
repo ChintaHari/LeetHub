@@ -90,6 +90,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
+| [0768-partition-labels](https://github.com/ChintaHari/LeetHub/tree/master/0768-partition-labels) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
@@ -109,6 +110,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/ChintaHari/LeetHub/tree/master/0049-group-anagrams) |
+| [0768-partition-labels](https://github.com/ChintaHari/LeetHub/tree/master/0768-partition-labels) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 | [1093-recover-a-tree-from-preorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/1093-recover-a-tree-from-preorder-traversal) |
 | [1170-shortest-common-supersequence](https://github.com/ChintaHari/LeetHub/tree/master/1170-shortest-common-supersequence) |
@@ -228,6 +230,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0015-3sum](https://github.com/ChintaHari/LeetHub/tree/master/0015-3sum) |
+| [0768-partition-labels](https://github.com/ChintaHari/LeetHub/tree/master/0768-partition-labels) |
 | [1894-merge-strings-alternately](https://github.com/ChintaHari/LeetHub/tree/master/1894-merge-strings-alternately) |
 | [2265-partition-array-according-to-given-pivot](https://github.com/ChintaHari/LeetHub/tree/master/2265-partition-array-according-to-given-pivot) |
 | [2551-apply-operations-to-an-array](https://github.com/ChintaHari/LeetHub/tree/master/2551-apply-operations-to-an-array) |
@@ -253,5 +256,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [0768-partition-labels](https://github.com/ChintaHari/LeetHub/tree/master/0768-partition-labels) |
 | [0778-reorganize-string](https://github.com/ChintaHari/LeetHub/tree/master/0778-reorganize-string) |
 <!---LeetCode Topics End-->
