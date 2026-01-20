@@ -49,6 +49,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/ChintaHari/LeetHub/tree/master/0905-length-of-longest-fibonacci-subsequence) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/ChintaHari/LeetHub/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
+| [1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold](https://github.com/ChintaHari/LeetHub/tree/master/1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold) |
 | [1364-tuple-with-same-product](https://github.com/ChintaHari/LeetHub/tree/master/1364-tuple-with-same-product) |
 | [1477-product-of-the-last-k-numbers](https://github.com/ChintaHari/LeetHub/tree/master/1477-product-of-the-last-k-numbers) |
 | [1483-rank-teams-by-votes](https://github.com/ChintaHari/LeetHub/tree/master/1483-rank-teams-by-votes) |
@@ -84,6 +85,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0054-spiral-matrix](https://github.com/ChintaHari/LeetHub/tree/master/0054-spiral-matrix) |
 | [0200-number-of-islands](https://github.com/ChintaHari/LeetHub/tree/master/0200-number-of-islands) |
 | [0854-making-a-large-island](https://github.com/ChintaHari/LeetHub/tree/master/0854-making-a-large-island) |
+| [1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold](https://github.com/ChintaHari/LeetHub/tree/master/1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold) |
 | [2764-maximum-number-of-fish-in-a-grid](https://github.com/ChintaHari/LeetHub/tree/master/2764-maximum-number-of-fish-in-a-grid) |
 | [3227-find-missing-and-repeated-values](https://github.com/ChintaHari/LeetHub/tree/master/3227-find-missing-and-repeated-values) |
 ## Hash Table
@@ -190,6 +192,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Prefix Sum
 |  |
 | ------- |
+| [1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold](https://github.com/ChintaHari/LeetHub/tree/master/1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold) |
 | [1477-product-of-the-last-k-numbers](https://github.com/ChintaHari/LeetHub/tree/master/1477-product-of-the-last-k-numbers) |
 | [1631-number-of-sub-arrays-with-odd-sum](https://github.com/ChintaHari/LeetHub/tree/master/1631-number-of-sub-arrays-with-odd-sum) |
 | [2059-unique-length-3-palindromic-subsequences](https://github.com/ChintaHari/LeetHub/tree/master/2059-unique-length-3-palindromic-subsequences) |
@@ -247,6 +250,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Binary Search
 |  |
 | ------- |
+| [1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold](https://github.com/ChintaHari/LeetHub/tree/master/1292-maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/ChintaHari/LeetHub/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 | [2665-minimum-time-to-repair-cars](https://github.com/ChintaHari/LeetHub/tree/master/2665-minimum-time-to-repair-cars) |
 ## Bit Manipulation
